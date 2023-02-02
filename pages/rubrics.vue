@@ -8,10 +8,8 @@
         :parameter_filter="parameteres"
       />
     </div>
-    <div class="grid grid-cols-[min-content_1fr;] mt-7">
-      <ActionButtom></ActionButtom>
-      <Search></Search>
-    </div>
+    <ButtonAndSearch></ButtonAndSearch>
+    <RubricActions></RubricActions>
   </div>
 </template>
 
@@ -19,16 +17,16 @@
 import ParameterFilter from "../components/parameterFilter";
 import headTitle from "../components/headTitle.vue";
 import parameterFilter from "../components/parameterFilter.vue";
-import ActionButtom from "../components/actionButtom.vue";
-import Search from "../components/Search.vue";
+import ButtonAndSearch from "../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
+import RubricActions from "../components/rubric-actions/RubricActions.vue";
 export default {
   name: "rubrics",
   components: {
     ParameterFilter,
     headTitle,
     parameterFilter,
-    ActionButtom,
-    Search
+    ButtonAndSearch,
+    RubricActions,
   },
   data() {
     return {

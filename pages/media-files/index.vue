@@ -8,18 +8,20 @@
         :parameter_filter="parameteres"
       />
     </div>
+    <ButtonAndSearch></ButtonAndSearch>
   </div>
 </template>
 
 <script>
 import headTitle from "../../components/headTitle.vue";
 import parameterFilter from "../../components/parameterFilter.vue";
+import ButtonAndSearch from "../../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
 export default {
   name: "media-files",
-  components: { headTitle, parameterFilter },
+  components: { headTitle, parameterFilter, ButtonAndSearch },
   data() {
     return {
-        filter: [
+      filter: [
         {
           text: "Все",
           count: "1647",
