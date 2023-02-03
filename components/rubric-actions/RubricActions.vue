@@ -47,6 +47,7 @@ export default {
       ],
       rubric: [
         {
+          id: 1,
           rubric: "Бизнес",
           discription: "Мы рассказываем о бизнесе в Таджикистане.",
           yarlik: "business",
@@ -55,6 +56,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 2,
           rubric: "Путеществия",
           discription: "Возвращение Мухаммада. Как и чем живет",
           yarlik: "Javascript",
@@ -63,6 +65,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 3,
           rubric: "Животные",
           discription: "Два в одном. Как колорист помогает приюту ",
           yarlik: "business",
@@ -71,6 +74,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 4,
           rubric: "Люди",
           discription: "Казахстан меняет правила. С 27 января граждане",
           yarlik: "business",
@@ -79,6 +83,7 @@ export default {
           editicon: "role.svg",
         },
         {
+          id: 5,
           rubric: "Бизнес",
           discription: "Мы рассказываем о бизнесе в Таджикистане.",
           yarlik: "business",
@@ -87,6 +92,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 6,
           rubric: "Путеществия",
           discription: "Возвращение Мухаммада. Как и чем живет",
           yarlik: "Javascript",
@@ -95,6 +101,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 7,
           rubric: "Животные",
           discription: "Два в одном. Как колорист помогает приюту ",
           yarlik: "business",
@@ -103,6 +110,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 8,
           rubric: "Люди",
           discription: "Казахстан меняет правила. С 27 января граждане",
           yarlik: "business",
@@ -111,6 +119,7 @@ export default {
           editicon: "role.svg",
         },
         {
+          id: 9,
           rubric: "Бизнес",
           discription: "Мы рассказываем о бизнесе в Таджикистане.",
           yarlik: "business",
@@ -119,6 +128,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 10,
           rubric: "Путеществия",
           discription: "Возвращение Мухаммада. Как и чем живет",
           yarlik: "Javascript",
@@ -127,6 +137,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 11,
           rubric: "Животные",
           discription: "Два в одном. Как колорист помогает приюту ",
           yarlik: "business",
@@ -135,6 +146,7 @@ export default {
           editicon: "edit.svg",
         },
         {
+          id: 12,
           rubric: "Люди",
           discription: "Казахстан меняет правила. С 27 января граждане",
           yarlik: "business",
