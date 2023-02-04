@@ -3,32 +3,52 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        font-family: Manrope;
-        background-color: #F8F8F9;
-    }
-    .sidebar-menu aside nav a {
-        @apply flex p-3
-    }
-    .sidebar-menu aside nav a {
-        @apply text-[#BCC1C9] text-base ml-4 font-bold
-    }
-    .sidebar-menu aside nav a img {
-        @apply mr-4
-    }
-    .sidebar-menu aside nav a:hover {
-        @apply bg-white text-[#0048B7]
-    }
-    .nuxt-link-exact-active {
-        @apply text-[#0048B7]
-    }
-    button {
-        @apply bg-[#0048B7] text-white text-sm p-[9px] rounded-md
-    }
-    a {
-        @apply text-[#0048B7]
-    }
-    h2 {
-        @apply text-lg font-bold 
-    }
+  body {
+    font-family: Manrope;
+    background-color: #f8f8f9;
+  }
+  .sidebar-menu aside nav a {
+    @apply flex p-3;
+  }
+  .sidebar-menu aside nav a {
+    @apply text-[#BCC1C9] text-base ml-4 font-bold;
+  }
+  .sidebar-menu aside nav a img {
+    @apply mr-4;
+  }
+  .sidebar-menu aside nav a:hover {
+    @apply bg-white text-[#0048B7];
+  }
+  .nuxt-link-exact-active {
+    @apply text-[#0048B7];
+  }
+  button {
+    @apply bg-[#0048B7] text-white text-sm p-[9px] rounded-md;
+  }
+  a {
+    @apply text-[#0048B7];
+  }
+  h2 {
+    @apply text-lg font-bold;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .pagination [tabindex] {
+    padding: 5px 10px;
+    border: 1px solid #d1d5db;
+  }
+  .page-item a {
+    padding: 5px 12px;
+    border: 1px solid #d1d5db;
+    align-items: center;
+    color: #4b5563;
+  }
+  .page-item.active a {
+    color: #0048b7;
+    border: 1px solid #0048b7;
+    background-color: #eef2ff;
+  }
 }

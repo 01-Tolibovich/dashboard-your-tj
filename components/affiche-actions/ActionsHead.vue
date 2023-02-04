@@ -1,14 +1,11 @@
 <template>
-  <div class="actions-head bg-white rounded-b-lg mb-10">
+  <div class="actions-head bg-white rounded-b-lg">
     <div
       class="grid grid-cols-[64px_88px_1fr_repeat(4,_140px)_64px] gap-8 items-center border-b p-4"
     >
-      <small
-        class="py-4 font-bold"
-        v-for="title in affiheHead"
-        :key="title.text"
-        >{{ title.text }}</small
-      >
+      <small class="font-bold" v-for="title in affiheHead" :key="title.text">{{
+        title.text
+      }}</small>
     </div>
     <SelectAffiches
       v-for="item in afficheActions"

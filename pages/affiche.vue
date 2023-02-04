@@ -1,5 +1,5 @@
 <template>
-  <div class="affiche">
+  <div class="affiche mb-10">
     <headTitle head_title="Афиша" />
     <div class="flex flex-wrap bg-white rounded-lg">
       <ParameterFilter
@@ -10,6 +10,22 @@
     </div>
     <ButtonAndSearch></ButtonAndSearch>
     <ActionsHead></ActionsHead>
+    <div
+      class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
+    >
+      <Results></Results>
+      <paginate
+        :page-count="20"
+        :page-range="3"
+        :margin-pages="2"
+        :click-handler="clickCallback"
+        :prev-text="'<'"
+        :next-text="'>'"
+        :container-class="'pagination'"
+        :page-class="'page-item'"
+      >
+      </paginate>
+    </div>
   </div>
 </template>
 
@@ -18,11 +34,20 @@ import headTitle from "../components/headTitle.vue";
 import parameterFilter from "../components/parameterFilter.vue";
 import ButtonAndSearch from "../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
 import ActionsHead from "../components/affiche-actions/ActionsHead.vue";
+import Results from "../components/pagination-results/Results.vue";
 export default {
   name: "affiche",
-  components: { headTitle, parameterFilter, ButtonAndSearch, ActionsHead },
+  components: {
+    headTitle,
+    parameterFilter,
+    ButtonAndSearch,
+    ActionsHead,
+    Paginate: () => import("vuejs-paginate").then(({ Paginate }) => Paginate),
+    Results,
+  },
   data() {
     return {
+      page: 10,
       filter: [
         {
           text: "Все",
@@ -49,3 +74,5 @@ export default {
   },
 };
 </script>
+
+<style></style>
