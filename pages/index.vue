@@ -1,7 +1,9 @@
 <template>
   <div class="console">
     <headTitle head_title="Консоль" />
-    <div class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-11 mb-7">
+    <div
+      class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-11 mb-7"
+    >
       <MainComponent
         v-for="item in mainComponents"
         :key="item.index"

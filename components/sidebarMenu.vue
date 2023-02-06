@@ -10,13 +10,13 @@
             <img src="../assets/images/console.svg" alt="" />
             <p class="hidden sm:block">Консоль</p>
           </nuxt-link>
-          <nuxt-link to="/rubrics">
-            <img src="../assets/images/rubrics.svg" alt="" />
-            <p class="hidden sm:block">Рубрики</p>
-          </nuxt-link>
           <nuxt-link to="/publications">
             <img src="../assets/images/publics.svg" alt="" />
             <p class="hidden sm:block">Публикации</p>
+          </nuxt-link>
+          <nuxt-link to="/rubrics">
+            <img src="../assets/images/rubrics.svg" alt="" />
+            <p class="hidden sm:block">Рубрики</p>
           </nuxt-link>
           <nuxt-link to="/affiche">
             <img src="../assets/images/affiche.svg" alt="" />

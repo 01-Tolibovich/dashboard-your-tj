@@ -1,6 +1,6 @@
 <template>
   <div class="tags">
-    <headTitle head_title="Теги" />
+    <headTitle head_title="Теги" :addButtonComponent="true"/>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="publications-head grid gap-4 grid-cols-[64px_1fr_200px_110px_110px_210px_104px_64px] bg-white font-bold border-b h-12 items-center"
+      class="publications-head grid grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] bg-white font-bold border-b border-[#E5E7EB] h-12 items-center min-w-[1100px]"
     >
       <small v-for="title in publicHead" :key="title.text">{{
         title.text

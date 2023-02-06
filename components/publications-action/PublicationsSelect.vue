@@ -1,6 +1,6 @@
 <template>
   <div
-    class="publications-select grid grid-cols-[64px_1fr_200px_110px_110px_210px_104px_64px] items-center gap-4 border-b h-12"
+    class="publications-select grid grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] items-center border-b border-[#E5E7EB] h-12 min-w-[1100px] "
   >
     <input
       class="justify-center"
@@ -8,15 +8,15 @@
       :id="select_public.id"
       :name="select_public.id"
     />
-    <label class="border-l flex h-full items-center" :for="select_public.id">{{
+    <label class="border-l border-[#E5E7EB] flex h-full items-center pl-4 pr-2" :for="select_public.id">{{
       select_public.title
     }}</label>
-    <label :for="select_public.id">{{ select_public.admin }}</label>
-    <label :for="select_public.id">{{ select_public.rubric }}</label>
-    <label :for="select_public.id">{{ select_public.whatch }}</label>
-    <label :for="select_public.id">{{ select_public.status }}</label>
-    <label :for="select_public.id">{{ select_public.date }}</label>
-    <img border-l src="../../assets/images/edit.svg" alt="" />
+    <label @click="shovPublic" class="px-2" :for="select_public.id">{{ select_public.admin }}</label>
+    <label class="px-2" :for="select_public.id">{{ select_public.rubric }}</label>
+    <label class="px-2" :for="select_public.id">{{ select_public.whatch }}</label>
+    <label class="px-2" :for="select_public.id">{{ select_public.status }}</label>
+    <label class="pr-4 pl-2 border-r border-[#E5E7EB] h-full flex items-center" :for="select_public.id">{{ select_public.date }}</label>
+    <img class="justify-self-center" border-l src="../../assets/images/edit.svg" alt="" />
   </div>
 </template>
 
@@ -31,5 +31,10 @@ export default {
       },
     },
   },
+  methods: {
+    shovPublic: function () {
+      alert(this.admin)
+    }
+  }
 };
 </script>

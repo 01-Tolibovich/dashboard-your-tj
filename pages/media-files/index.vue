@@ -1,6 +1,6 @@
 <template>
   <div class="media-files">
-    <headTitle head_title="Медиафайлы" />
+    <headTitle head_title="Медиафайлы" :addButtonComponent="true"/>
     <div class="flex flex-wrap bg-white rounded-lg">
       <parameterFilter
         v-for="parameteres in filter"

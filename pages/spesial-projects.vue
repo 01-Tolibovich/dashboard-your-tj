@@ -1,6 +1,6 @@
 <template>
   <div class="spesial-projects">
-    <headTitle head_title="Спецпроекты" />
+    <headTitle head_title="Спецпроекты" :addButtonComponent="true"/>
     <div class="flex flex-wrap bg-white rounded-lg">
       <parameterFilter
         v-for="parameteres in filter"

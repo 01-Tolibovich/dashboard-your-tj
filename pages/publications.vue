@@ -1,6 +1,9 @@
 <template>
   <div class="publications">
-    <headTitle head_title="Публикации" />
+    <div>
+      <headTitle head_title="Публикации" :addButtonComponent="true" />
+    </div>
+
     <div class="flex flex-wrap bg-white rounded-lg">
       <ParameterFilter
         v-for="parameteres in filter"
@@ -48,6 +51,7 @@ export default {
   },
   data() {
     return {
+      buttonForAdd: true,
       filter: [
         {
           text: "Все",

@@ -1,6 +1,6 @@
 <template>
   <div class="affiche mb-10">
-    <headTitle head_title="Афиша" />
+    <headTitle head_title="Афиша" :addButtonComponent="true"/>
     <div class="flex flex-wrap bg-white rounded-lg">
       <ParameterFilter
         v-for="parameteres in filter"

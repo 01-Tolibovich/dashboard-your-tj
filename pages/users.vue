@@ -1,6 +1,6 @@
 <template>
   <div class="users">
-    <headTitle head_title="Пользователи" />
+    <headTitle head_title="Пользователи" :addButtonComponent="true"/>
     <Search class="p-4 bg-white rounded-lg mt-5"></Search>
   </div>
 </template>
