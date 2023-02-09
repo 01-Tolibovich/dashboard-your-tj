@@ -1,6 +1,10 @@
 <template>
   <div class="spesial-projects">
-    <headTitle head_title="Спецпроекты" :addButtonComponent="true"/>
+    <HeadGrid>
+      <headTitle head_title="Спецпроекты" />
+      <AddButton @click="$router.push('/spesial-projects/add-project')"/>
+    </HeadGrid>
+
     <div class="flex flex-wrap bg-white rounded-lg">
       <parameterFilter
         v-for="parameteres in filter"
@@ -29,15 +33,19 @@
 </template>
 
 <script>
-import headTitle from "../components/headTitle.vue";
-import parameterFilter from "../components/parameterFilter.vue";
-import ButtonAndSearch from "../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
+import HeadGrid from "@/components/Header/HeadGrid.vue";
+import headTitle from "@/components/Header/headTitle.vue";
+import AddButton from "../../components/buttons/AddButton.vue";
+import parameterFilter from "@/components/parameterFilter.vue";
+import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
 import Paginate from "@/node_modules/vuejs-paginate";
-import Results from "../components/pagination-results/Results.vue";
+import Results from "@/components/pagination-results/Results.vue";
 export default {
   name: "spesial-projects",
   components: {
+    HeadGrid,
     headTitle,
+    AddButton,
     parameterFilter,
     ButtonAndSearch,
     Paginate,

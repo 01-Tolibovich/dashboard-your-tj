@@ -1,13 +1,14 @@
 <template>
-    <div class="roles">
-        <headTitle head_title="Роли" />
-    </div>
+  <div class="roles">
+    <HeadGrid><headTitle head_title="Роли" /></HeadGrid>
+  </div>
 </template>
 
 <script>
-import headTitle from '../components/headTitle.vue';
+import HeadGrid from "@/components/Header/HeadGrid.vue";
+import headTitle from "@/components/Header/headTitle.vue";
 export default {
-    name: 'roles',
-    components: {headTitle}
-}
+  name: "roles",
+  components: { HeadGrid, headTitle },
+};
 </script>

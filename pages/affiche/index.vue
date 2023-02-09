@@ -1,6 +1,10 @@
 <template>
   <div class="affiche mb-10">
-    <headTitle head_title="Афиша" :addButtonComponent="true"/>
+    <HeadGrid>
+      <headTitle head_title="Афиша" />
+      <AddButton @click="$router.push('/affiche/add-affiche')" />
+    </HeadGrid>
+
     <div class="flex flex-wrap bg-white rounded-lg">
       <ParameterFilter
         v-for="parameteres in filter"
@@ -30,15 +34,19 @@
 </template>
 
 <script>
-import headTitle from "../components/headTitle.vue";
-import parameterFilter from "../components/parameterFilter.vue";
-import ButtonAndSearch from "../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
-import ActionsHead from "../components/affiche-actions/ActionsHead.vue";
-import Results from "../components/pagination-results/Results.vue";
+import HeadGrid from "@/components/Header/HeadGrid.vue";
+import headTitle from "@/components/Header/headTitle.vue";
+import AddButton from "@/components/buttons/AddButton.vue";
+import parameterFilter from "@/components/parameterFilter.vue";
+import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
+import ActionsHead from "@/components/affiche-actions/ActionsHead.vue";
+import Results from "@/components/pagination-results/Results.vue";
 export default {
   name: "affiche",
   components: {
+    HeadGrid,
     headTitle,
+    AddButton,
     parameterFilter,
     ButtonAndSearch,
     ActionsHead,

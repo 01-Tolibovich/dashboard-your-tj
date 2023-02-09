@@ -1,6 +1,7 @@
 <template>
   <div class="history">
-    <headTitle head_title="История" />
+    <HeadGrid><headTitle head_title="История" /></HeadGrid>
+
     <div class="flex flex-wrap bg-white rounded-lg">
       <parameterFilter
         v-for="parameteres in filter"
@@ -29,7 +30,8 @@
 </template>
 
 <script>
-import headTitle from "../components/headTitle.vue";
+import HeadGrid from "@/components/Header/HeadGrid.vue";
+import headTitle from "@/components/Header/headTitle.vue";
 import parameterFilter from "../components/parameterFilter.vue";
 import ButtonAndSearch from "../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
 import Paginate from "@/node_modules/vuejs-paginate";
@@ -37,6 +39,7 @@ import Results from "../components/pagination-results/Results.vue";
 export default {
   name: "hisrory",
   components: {
+    HeadGrid,
     headTitle,
     parameterFilter,
     ButtonAndSearch,

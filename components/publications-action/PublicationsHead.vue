@@ -1,9 +1,9 @@
 <template>
   <div>
     <div
-      class="publications-head grid grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] bg-white font-bold border-b border-[#E5E7EB] h-12 items-center min-w-[1100px]"
+      class="publications-head grid gap-4 grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] bg-white font-bold border-b border-[#E5E7EB] h-12 items-center min-w-[1100px]"
     >
-      <small v-for="title in publicHead" :key="title.text">{{
+      <small v-for="title in publicHead" :key="title.index">{{
         title.text
       }}</small>
     </div>
@@ -46,8 +46,8 @@ export default {
         },
         {
           id: 2,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "Таҷикистон ба пеш...",
+          admin: "Эшматов Тошмат",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",
@@ -55,8 +55,8 @@ export default {
         },
         {
           id: 3,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "Ведущий казахстанский маркетолог проведет цикл мастер-классов и тренингов «Управление продажами и продвижением»",
+          admin: "Сиддиқав Абубакр",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",
@@ -64,8 +64,8 @@ export default {
         },
         {
           id: 4,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "В Душанбе казахстанский миллионер проведет цикл тренингов и мастер-классов. Количество мест ограничено",
+          admin: "Насруллоева Нилуфар",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",
@@ -73,8 +73,8 @@ export default {
         },
         {
           id: 5,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "SMM для девушек: курс, который помог таджикским девушкам получить новые навыки, востребованные на рынке",
+          admin: "Ходжаева Ходжамо",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",
@@ -82,8 +82,8 @@ export default {
         },
         {
           id: 6,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "На Первом совещании координационного комитета обсуждены основные достижения Программы здравоохранения, финансируемой Евросоюзом",
+          admin: "Тирандозов Табар",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",
@@ -91,8 +91,8 @@ export default {
         },
         {
           id: 7,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "Среди крупнейших: таджикский онлайн-кинотеатр SOMON.TV выходит на мировой рынок",
+          admin: "Абдуллоев Будулай",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",
@@ -100,8 +100,8 @@ export default {
         },
         {
           id: 8,
-          title: "Муроҷиати фаъолон ба Рустам...",
-          admin: "Абуамриддин Гафуров",
+          title: "Хотите сделать свою компанию успешной? Пройдите инновационный курс «Построение эффективной организации»",
+          admin: "Асроров Хоҷа",
           rubric: "Life, People",
           whatch: "8.3k",
           status: "Опубликовано",

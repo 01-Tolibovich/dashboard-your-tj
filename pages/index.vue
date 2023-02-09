@@ -1,6 +1,9 @@
 <template>
   <div class="console">
-    <headTitle head_title="Консоль" />
+    <HeadGrid>
+      <headTitle head_title="Консоль" />
+    </HeadGrid>
+    
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-11 mb-7"
     >
@@ -22,14 +25,16 @@
 </template>
 
 <script>
-import MainComponent from "../components/mainComponent";
-import headTitle from "../components/headTitle.vue";
-import mainComponent from "../components/mainComponent.vue";
-import notesForm from "../components/notesForm.vue";
-import publicationHistory from "../components/preliminaryPublications/publicationHistory.vue";
+import HeadGrid from "@/components/Header/HeadGrid.vue";
+import MainComponent from "@/components/mainComponent";
+import headTitle from "@/components/Header/headTitle.vue";
+import mainComponent from "@/components/mainComponent.vue";
+import notesForm from "@/components/notesForm.vue";
+import publicationHistory from "@/components/preliminaryPublications/publicationHistory.vue";
 export default {
   name: "console",
   components: {
+    HeadGrid,
     MainComponent,
     headTitle,
     mainComponent,

@@ -3,7 +3,7 @@
     <div
       class="grid grid-cols-[64px_88px_1fr_repeat(4,_140px)_64px] gap-8 items-center border-b p-4"
     >
-      <small class="font-bold" v-for="title in affiheHead" :key="title.text">{{
+      <small class="font-bold" v-for="title in affiheHead" :key="title.index">{{
         title.text
       }}</small>
     </div>

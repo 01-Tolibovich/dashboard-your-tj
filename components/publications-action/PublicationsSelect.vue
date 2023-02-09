@@ -1,6 +1,6 @@
 <template>
   <div
-    class="publications-select grid grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] items-center border-b border-[#E5E7EB] h-12 min-w-[1100px] "
+    class="publications-select grid gap-4 grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] items-center border-b border-[#E5E7EB] h-12 min-w-[1100px] "
   >
     <input
       class="justify-center"
@@ -8,7 +8,7 @@
       :id="select_public.id"
       :name="select_public.id"
     />
-    <label class="border-l border-[#E5E7EB] flex h-full items-center pl-4 pr-2" :for="select_public.id">{{
+    <label class="_public-title border-l border-[#E5E7EB] flex h-full items-center pl-4 pr-2" :for="select_public.id">{{
       select_public.title
     }}</label>
     <label @click="shovPublic" class="px-2" :for="select_public.id">{{ select_public.admin }}</label>

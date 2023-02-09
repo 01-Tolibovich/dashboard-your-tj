@@ -1,6 +1,8 @@
 <template>
-  <div class="addvertisement">
-    <HeadGrid><headTitle head_title="Реклама" /></HeadGrid>
+  <div>
+    <HeadGrid>
+        <headTitle head_title="Добавить тег"/>
+    </HeadGrid>
   </div>
 </template>
 
@@ -8,10 +10,7 @@
 import HeadGrid from "@/components/Header/HeadGrid.vue";
 import headTitle from "@/components/Header/headTitle.vue";
 export default {
-  name: "addvertisement",
+  name: "add-tag",
   components: { HeadGrid, headTitle },
-  data() {
-    return {};
-  },
 };
 </script>

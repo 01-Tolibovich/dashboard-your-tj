@@ -8,14 +8,14 @@
       <small
         class="py-4 font-bold"
         v-for="title in rubricHead"
-        :key="title.text"
+        :key="title.index"
         >{{ title.text }}</small
       >
       <div class="border-b col-span-7"></div>
     </div>
     <SelectRubrics
       v-for="field in rubric"
-      :key="field.index"
+      :key="field.id"
       :select_rubric="field"
     ></SelectRubrics>
   </div>
