@@ -7,6 +7,9 @@
     font-family: Manrope;
     background-color: #f8f8f9;
   }
+  p {
+    @apply text-sm text-black font-medium
+  }
   .sidebar-menu aside nav a {
     @apply flex p-3 pr-10 rounded-md;
   }
@@ -63,7 +66,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  ._neo-button {
-    
-  }
+  
 }

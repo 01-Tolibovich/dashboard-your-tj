@@ -14,6 +14,6 @@ export default {
     return {
     };
   },
-  props: { head_title: String, addButtonComponent:Boolean },
+  props: { head_title: String, },
 };
 </script>

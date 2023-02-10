@@ -1,5 +1,5 @@
 <template>
-  <button class="text-black shadow-md mx-4 my-4 py-2 px-3 rounded-md bg-white">{{ neo_button }}</button>
+  <button class="text-black shadow-md mr-4 mb-4 py-2 px-3 rounded-md bg-white border border-white hover:border-[#747c88] hover:bg-gray-50 hover:border focus:bg-gray-50">{{ neo_button }}</button>
 </template>
 
 <script>
