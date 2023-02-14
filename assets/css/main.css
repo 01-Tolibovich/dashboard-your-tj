@@ -104,4 +104,18 @@
   ._layoul-positions div h2 {
     @apply text-4xl
   }
+  
+}
+
+.tox-edit-area__iframe, .tox-statusbar {
+  background: #F3F4F6 !important;
+}
+.tox {
+  border-radius: 6px !important;
+  border-color: #e5e7eb !important;
+  margin: 25px auto;
+}
+
+.tox div {
+  border-color: #e5e7eb !important;
 }

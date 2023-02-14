@@ -21,7 +21,7 @@
         </form>
         <UploadMediaInPost />
       </div>
-      <form>
+      <form class="mb-6">
         <p>Заголовок</p>
         <input :type="text" placeholder="Введите заголовок" />
         <p>Подзаголовок (Описание)</p>
@@ -70,9 +70,21 @@
               <option value="22">ADVERTISIMENT 1280x200</option>
             </select>
           </div>
-          <PositionPostPlace @buttonToggle="modal = !modal"/>
+          <PositionPostPlace @buttonToggle="modal = !modal" />
         </div>
-      </form>
+        <Editor
+          api-key="no-api-key"
+          :init="{
+            plugins: 'lists link image table code help wordcount',
+          }"
+        />
+        <div class="bg-[#F3F4F6] p-7">
+          <div>
+            <NeoButton neo_button="Соцсети" />
+            <NeoButton neo_button="SEO" />
+          </div>
+        </div>
+      </form>   
     </MainBg>
     <LayoultPositions
       class="w-full"
@@ -90,6 +102,7 @@ import NeoButton from "@/components/buttons/NeoButton.vue";
 import UploadMediaInPost from "@/components/UploadMediaInPost.vue";
 import PositionPostPlace from "@/components/buttons/PositionPostPlace.vue";
 import LayoultPositions from "@/components/LayoultPositions.vue";
+import Editor from "@tinymce/tinymce-vue";
 export default {
   name: "add-publications",
   components: {
@@ -100,6 +113,7 @@ export default {
     UploadMediaInPost,
     PositionPostPlace,
     LayoultPositions,
+    Editor,
   },
   data() {
     return {
