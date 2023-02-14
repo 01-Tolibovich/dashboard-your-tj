@@ -66,5 +66,42 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+  input,select,textarea:focus {
+    outline-color: #0048B7;
+  }
+  input, select {
+    @apply border block w-full py-2 px-3 rounded-md mt-1 mb-6
+  }
+  input[type=radio] {
+    @apply border-none inline-block w-auto p-0 pr-4 rounded-md m-0
+  }
+  input[type="radio"] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 6px;
+    background-clip: content-box;
+    border: 1px solid #bbbbbb;
+    background-color: #e7e6e7;
+    border-radius: 50%;
+  }
+  input[type="radio"]:checked {
+    border: 1px solid #4F46E5;
+    background-color: #4F46E5;
+  }
+  label {
+    @apply pr-4
+  }
+  input[type=file] {
+    @apply p-0
+  }
+  ._layoul-positions {
+    @apply text-center
+  }
+  ._layoul-positions div {
+    @apply flex flex-col items-center justify-center cursor-pointer
+  }
+  ._layoul-positions div h2 {
+    @apply text-4xl
+  }
 }

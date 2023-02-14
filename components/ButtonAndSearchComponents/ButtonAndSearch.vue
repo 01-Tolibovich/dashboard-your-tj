@@ -1,6 +1,6 @@
 <template>
   <div
-    class="button-and-search grid grid-flow-row sm:grid-cols-[min-content_1fr;] mt-7 gap-5 bg-white p-4 rounded-t-lg border-b"
+    class="button-and-search grid grid-flow-row sm:grid-cols-[auto_1fr;] mt-7 gap-5 bg-white p-4 rounded-t-lg border-b"
   >
     <actionButtom></actionButtom>
     <Search></Search>
