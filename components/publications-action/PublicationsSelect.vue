@@ -1,6 +1,6 @@
 <template>
   <div
-    class="publications-select grid gap-4 grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] items-center border-b border-[#E5E7EB] h-12 min-w-[1100px] "
+    class=" bg-white publications-select grid gap-4 grid-cols-[48px_1fr_200px_110px_110px_210px_104px_48px] items-center border-b border-[#E5E7EB] h-12 min-w-[1100px] "
   >
     <input
       class="justify-center"

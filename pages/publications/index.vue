@@ -14,6 +14,7 @@
     </div>
     <ButtonAndSearch></ButtonAndSearch>
     <PublicationsHead></PublicationsHead>
+    <PublicTable/>
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
     >
@@ -39,9 +40,11 @@ import headTitle from "@/components/Header/headTitle.vue";
 import AddButton from "../../components/buttons/AddButton.vue";
 import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
 import parameterFilter from "@/components/parameterFilter.vue";
+import PublicTable from "@/components/publications-action/PublicTable.vue";
 import Paginate from "@/node_modules/vuejs-paginate";
 import Results from "@/components/pagination-results/Results.vue";
 import PublicationsHead from "@/components/publications-action/PublicationsHead.vue";
+
 export default {
   name: "publications",
   components: {
@@ -50,6 +53,7 @@ export default {
     AddButton,
     ButtonAndSearch,
     parameterFilter,
+    PublicTable,
     Paginate,
     Results,
     PublicationsHead,

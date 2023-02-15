@@ -7,6 +7,7 @@
     font-family: Manrope;
     background-color: #f8f8f9;
   }
+  
   p {
     @apply text-sm text-black font-medium
   }
@@ -21,6 +22,14 @@
   }
   .sidebar-menu aside nav a:hover {
     @apply bg-white text-[#0048B7];
+  }
+  ._sidebar-menu {
+    transform: translateX(-100%)
+  }
+  @screen lg {
+    ._sidebar-menu {
+      transform: translateX(0)
+    }
   }
   .nuxt-link-active ._text {
     @apply text-[#0048B7];
@@ -54,6 +63,12 @@
     border: 1px solid #0048b7;
     background-color: #eef2ff;
   }
+  ._add-posts-form-slot input {
+    @apply mt-2 mb-6
+  }
+  ._add-posts-form-slot select {
+    @apply mt-2 mb-6
+  }
 }
 
 
@@ -66,11 +81,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  
   input,select,textarea:focus {
     outline-color: #0048B7;
   }
   input, select {
-    @apply border block w-full py-2 px-3 rounded-md mt-1 mb-6
+    @apply border block w-full py-2 px-3 rounded-md
   }
   input[type=radio] {
     @apply border-none inline-block w-auto p-0 pr-4 rounded-md m-0
@@ -89,6 +105,9 @@
     border: 1px solid #4F46E5;
     background-color: #4F46E5;
   }
+  input[type="file"] {
+    @apply m-0
+  }
   label {
     @apply pr-4
   }
@@ -104,6 +123,12 @@
   ._layoul-positions div h2 {
     @apply text-4xl
   }
+  ._table-value label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
   
 }
 

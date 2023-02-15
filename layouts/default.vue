@@ -1,6 +1,6 @@
 <template>
-    <div class=" grid grid-cols-[minmax(50px,_300px)_1fr] overflow-x-hidden">
-        <sidebarMenu class=""/>
+    <div class=" grid xl:grid-cols-[minmax(250px,_300px)_1fr] overflow-x-hidden">
+        <sidebarMenu class="hidden lg:block"/>
         <div class="border-l border-[#E5E7EB] z-10 bg-[#F8F8F9] min-h-screen">
             <topAdmin/>
             <Nuxt class="px-8"/>
