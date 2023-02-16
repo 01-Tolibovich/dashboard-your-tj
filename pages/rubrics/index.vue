@@ -13,7 +13,7 @@
       />
     </div>
     <ButtonAndSearch></ButtonAndSearch>
-    <ActionsInRubric></ActionsInRubric>
+    <RubricTable/>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ import headTitle from "@/components/Header/headTitle.vue";
 import AddButton from "@/components/buttons/AddButton.vue";
 import parameterFilter from "@/components/parameterFilter.vue";
 import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
-import ActionsInRubric from "@/components/RubricActions/ActionsInRubric";
+import RubricTable from "@/components/RubricActions/RubricTable.vue";
 export default {
   name: "rubrics",
   components: {
@@ -34,7 +34,7 @@ export default {
     AddButton,
     parameterFilter,
     ButtonAndSearch,
-    ActionsInRubric,
+    RubricTable,
   },
   data() {
     return {

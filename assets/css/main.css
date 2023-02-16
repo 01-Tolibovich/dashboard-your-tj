@@ -123,13 +123,24 @@
   ._layoul-positions div h2 {
     @apply text-4xl
   }
+  ._table-wrap {
+    @apply min-h-[50vh] bg-white rounded-md
+  }
   ._table-value label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
-}
-  
+    @apply p-4 border-y border-[#E5E7EB]
+  }
+  ._table-value small {
+    @apply p-4 border-y border-[#E5E7EB]
+  }
+  ._table-value ._input {
+    @apply p-4
+  }
+  ._table-value ._img {
+    @apply p-4
+  } 
 }
 
 .tox-edit-area__iframe, .tox-statusbar {

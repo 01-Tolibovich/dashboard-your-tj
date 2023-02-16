@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <div class="_table-value grid grid-cols-[min-content_1fr_repeat(6,_min-content)] gap-4 bg-white">
-      <small v-for="title in tableHead" :key="title" class="font-bold">{{
-        title.text
-      }}</small>
+  <div class="_table-wrap">
+    <div class="_table-value grid grid-cols-[min-content_repeat(2,_1fr)_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] lg:grid-cols-[min-content_1fr_repeat(5,_min-content)] xl:grid-cols-[min-content_1fr_repeat(6,_min-content)] bg-white">
+      <small class="font-bold"> </small>
+      <small class="font-bold border-l border-[#E5E7EB]">Заголовок</small>
+      <small class="font-bold">Администратор</small>
+      <small class="hidden md:block font-bold">Рубрики</small>
+      <small class="hidden lg:block font-bold">Просмотры</small>
+      <small class="hidden md:block font-bold">Статус</small>
+      <small class="hidden  xl:block font-bold border-r border-[#E5E7EB]">Дата</small>
+      <small class="font-bold "> </small>
 
       <template v-for="vulue in tableBody">
-        <input type="checkbox" id="value.id" name="value" />
-        <label for="value.id">{{ vulue.title }}</label>
-        <label for="select_public.id">{{ vulue.admin }}</label>
-        <label for="list.id">{{ vulue.rubric }}</label>
-        <label for="list.id">{{ vulue.whatch }}</label>
-        <label for="list.id">{{ vulue.status }}</label>
-        <label for="value.id">{{ vulue.date }}</label>
-        <img border-l src="../../assets/images/edit.svg" alt="" />
+        <div class="_input w-[50px] flex items-center justify-center border-y border-[#E5E7EB]"><input type="checkbox" id="value.id" name="value" /></div>
+        <label class="border-l border-[#E5E7EB]" for="">{{ vulue.title }}</label>
+        <label for="">{{ vulue.admin }}</label>
+        <label class="hidden md:block" for="">{{ vulue.rubric }}</label>
+        <label class="hidden lg:block" for="">{{ vulue.whatch }}</label>
+        <label class="hidden md:block" for="">{{ vulue.status }}</label>
+        <label class="hidden xl:block border-r border-[#E5E7EB]" for="">{{ vulue.date }}</label>
+        <div class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"><img border-l src="../../assets/images/edit.svg" alt="" /></div>
       </template>
     </div>
   </div>
@@ -24,16 +29,6 @@ export default {
   name: "public-table",
   data() {
     return {
-      tableHead: [
-        { text: " " },
-        { text: "Заголовок" },
-        { text: "Администратор" },
-        { text: "Рубрики" },
-        { text: "Просмотры" },
-        { text: "Статус" },
-        { text: "Дата" },
-        { text: " " },
-      ],
       tableBody: [
         {
           id: 1,
