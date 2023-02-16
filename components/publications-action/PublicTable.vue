@@ -1,9 +1,9 @@
 <template>
   <div class="_table-wrap">
-    <div class="_table-value grid grid-cols-[min-content_repeat(2,_1fr)_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] lg:grid-cols-[min-content_1fr_repeat(5,_min-content)] xl:grid-cols-[min-content_1fr_repeat(6,_min-content)] bg-white">
+    <div class="_table-value grid grid-cols-[min-content_repeat(1,_1fr)_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] lg:grid-cols-[min-content_1fr_repeat(5,_min-content)] xl:grid-cols-[min-content_1fr_repeat(6,_min-content)] bg-white">
       <small class="font-bold"> </small>
       <small class="font-bold border-l border-[#E5E7EB]">Заголовок</small>
-      <small class="font-bold">Администратор</small>
+      <small class="hidden md:block font-bold">Администратор</small>
       <small class="hidden md:block font-bold">Рубрики</small>
       <small class="hidden lg:block font-bold">Просмотры</small>
       <small class="hidden md:block font-bold">Статус</small>
@@ -13,7 +13,7 @@
       <template v-for="vulue in tableBody">
         <div class="_input w-[50px] flex items-center justify-center border-y border-[#E5E7EB]"><input type="checkbox" id="value.id" name="value" /></div>
         <label class="border-l border-[#E5E7EB]" for="">{{ vulue.title }}</label>
-        <label for="">{{ vulue.admin }}</label>
+        <label class="hidden md:block" for="">{{ vulue.admin }}</label>
         <label class="hidden md:block" for="">{{ vulue.rubric }}</label>
         <label class="hidden lg:block" for="">{{ vulue.whatch }}</label>
         <label class="hidden md:block" for="">{{ vulue.status }}</label>

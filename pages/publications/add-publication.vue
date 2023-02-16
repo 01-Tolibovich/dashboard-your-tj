@@ -44,9 +44,15 @@
             <option value="5">Тег 5</option>
           </select>
           <p class="mb-2">Расположение на сайте ($)</p>
-          <div class="grid grid-cols-[1fr_auto] items-center gap-4 mb-6">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-center gap-4 mb-6"
+          >
             <div class="w-full">
-              <select class="m-0" name="rubric" id="rubric">
+              <select
+                class="_position-post-place-select"
+                name="rubric"
+                id="rubric"
+              >
                 <option value="1">ADVERTISIMENT 1920x200</option>
                 <option value="2">A1 (10$)</option>
                 <option value="3">A2 (10$)</option>
@@ -74,6 +80,7 @@
             <PositionPostPlace @buttonToggle="modal = !modal" />
           </div>
           <p>Ссылка</p>
+          <input class="bg-[#F3F4F6]" type="url" name="name" id="id" />
           <Editor
             api-key="no-api-key"
             :init="{
@@ -86,7 +93,7 @@
             <NeoButton neo_button="Соцсети" />
             <NeoButton neo_button="SEO" />
           </div>
-          <div >
+          <div class="mb-6">
             <p class="mt-6 mb-2">{{ select_file_input }}</p>
             <div class="grid grid-flow-col items-center grid-cols-1">
               <input
@@ -98,13 +105,33 @@
                 placeholder="Введите заголовок"
               />
               <label
-                class=" col-start-1 col-end-2 row-start-1 row-end-2 min-w-min w-[134px] text-white rounded-l-md bg-[#BCC1C9] h-[32px] flex items-center justify-center m-0"
+                class="col-start-1 col-end-2 row-start-1 row-end-2 min-w-min w-[134px] text-white rounded-l-md bg-[#BCC1C9] h-[32px] flex items-center justify-center m-0"
                 for="fileInput2"
                 >Выбрать файл</label
               >
             </div>
           </div>
+          <p>Заголовок в Facebook</p>
+          <input type="text" name="" id="" placeholder="Введите заголовок" />
+          <p>Описание в Facebook</p>
+          <textarea name="" id="" rows="10"></textarea>
         </section>
+        <section class="bg-[#F3F4F6] p-7 rounded-md mt-6">
+          <p>Комментарий для Автора*</p>
+          <textarea name="" id="" rows="10"></textarea>
+        </section>
+        <div class="my-6 flex gap-5 flex-wrap justify-between">
+          <div class="flex gap-5 flex-wrap">
+            <button class="_blue-button">Опубликовать</button>
+            <button class="_red-transparent-button">На доработку</button>
+            <button class="_grey-botton">Отменить</button>
+          </div>
+          <div>
+            <button class="_blue-transparent-button">
+              Предварительный просмотр
+            </button>
+          </div>
+        </div>
       </AddPostsFormSlot>
     </MainBg>
     <LayoultPositions

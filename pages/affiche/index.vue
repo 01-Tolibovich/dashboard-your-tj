@@ -13,7 +13,7 @@
       />
     </div>
     <ButtonAndSearch></ButtonAndSearch>
-    <ActionsHead></ActionsHead>
+    <AfficheTable/>
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
     >
@@ -39,7 +39,7 @@ import headTitle from "@/components/Header/headTitle.vue";
 import AddButton from "@/components/buttons/AddButton.vue";
 import parameterFilter from "@/components/parameterFilter.vue";
 import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
-import ActionsHead from "@/components/affiche-actions/ActionsHead.vue";
+import AfficheTable from "@/components/affiche-actions/AfficheTable.vue";
 import Results from "@/components/pagination-results/Results.vue";
 export default {
   name: "affiche",
@@ -49,7 +49,7 @@ export default {
     AddButton,
     parameterFilter,
     ButtonAndSearch,
-    ActionsHead,
+    AfficheTable,
     Paginate: () => import("vuejs-paginate").then(({ Paginate }) => Paginate),
     Results,
   },

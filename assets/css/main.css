@@ -69,19 +69,34 @@
   ._add-posts-form-slot select {
     @apply mt-2 mb-6
   }
+
 }
 
 
 @layer components {
-  .blue-button {
-    @apply w-full flex items-center h-auto gap-3 justify-center  rounded-md border border-transparent bg-[#0048B7] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#4338CA] focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:ring-offset-2 
+  button {
+    @apply px-4 py-2 text-sm
+  }
+  ._blue-button {
+    @apply flex items-center h-auto gap-3 justify-center  rounded-md border border-transparent bg-[#0048B7] font-medium text-white shadow-sm hover:bg-[#4338CA] focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:ring-offset-2 
+  }
+  ._red-transparent-button {
+    @apply text-[#EF4444]  font-bold rounded-md border border-[#EF4444] hover:bg-[#0049b70e] focus:bg-[#0049b70e] active:bg-[#0049b70e]
+  }
+  ._blue-transparent-button {
+    @apply text-[#0048B7]  font-bold rounded-md border border-[#0048B7] hover:bg-[#0049b70e] focus:bg-[#0049b70e] active:bg-[#0049b70e]
+  }
+  ._grey-botton {
+    @apply text-[#575F6C] rounded-md bg-[#F3F4F6] border border-[#F3F4F6] hover:border-[#d1d1d1] hover:bg-gray-50 hover:border focus:bg-gray-50
   }
   ._public-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+  ._add-posts-form-slot textarea {
+    @apply w-full border rounded-md my-2
+  }
   input,select,textarea:focus {
     outline-color: #0048B7;
   }
@@ -106,13 +121,13 @@
     background-color: #4F46E5;
   }
   input[type="file"] {
-    @apply m-0
+    @apply m-0 p-0
   }
   label {
     @apply pr-4
   }
-  input[type=file] {
-    @apply p-0
+  ._position-post-place-select {
+    margin: 0 !important;
   }
   ._layoul-positions {
     @apply text-center
@@ -133,6 +148,9 @@
     @apply p-4 border-y border-[#E5E7EB]
   }
   ._table-value small {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @apply p-4 border-y border-[#E5E7EB]
   }
   ._table-value ._input {

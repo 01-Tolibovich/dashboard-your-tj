@@ -2,7 +2,7 @@
   <div class="spesial-projects">
     <HeadGrid>
       <headTitle head_title="Спецпроекты" />
-      <AddButton @click="$router.push('/spesial-projects/add-project')"/>
+      <AddButton @click="$router.push('/spesial-projects/add-project')" />
     </HeadGrid>
 
     <div class="flex flex-wrap bg-white rounded-lg">
@@ -13,6 +13,7 @@
       />
     </div>
     <ButtonAndSearch></ButtonAndSearch>
+    <SpesialProjectsTable />
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
     >
@@ -38,6 +39,7 @@ import headTitle from "@/components/Header/headTitle.vue";
 import AddButton from "../../components/buttons/AddButton.vue";
 import parameterFilter from "@/components/parameterFilter.vue";
 import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
+import SpesialProjectsTable from "@/components/spesial-project-actions/SpesialProjectsTable.vue";
 import Paginate from "@/node_modules/vuejs-paginate";
 import Results from "@/components/pagination-results/Results.vue";
 export default {
@@ -48,6 +50,7 @@ export default {
     AddButton,
     parameterFilter,
     ButtonAndSearch,
+    SpesialProjectsTable,
     Paginate,
     Results,
   },

@@ -10,6 +10,7 @@
       />
     </div>
     <ButtonAndSearch></ButtonAndSearch>
+    <CommentTable/>
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
     >
@@ -32,10 +33,11 @@
 <script>
 import HeadGrid from "@/components/Header/HeadGrid.vue";
 import headTitle from "@/components/Header/headTitle.vue";
-import parameterFilter from "../components/parameterFilter.vue";
-import ButtonAndSearch from "../components/ButtonAndSearchComponents/ButtonAndSearch.vue";
+import parameterFilter from "@/components/parameterFilter.vue";
+import ButtonAndSearch from "@/components/ButtonAndSearchComponents/ButtonAndSearch.vue";
+import CommentTable from "@/components/comments-actions/CommentTable.vue";
 import Paginate from "@/node_modules/vuejs-paginate";
-import Results from "../components/pagination-results/Results.vue";
+import Results from "@/components/pagination-results/Results.vue";
 export default {
   name: "comments",
   components: {
@@ -43,6 +45,7 @@ export default {
     headTitle,
     parameterFilter,
     ButtonAndSearch,
+    CommentTable,
     Paginate,
     Results,
   },

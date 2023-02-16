@@ -1,7 +1,7 @@
 <template>
   <div
     @click="toggle"
-    class="flex items-center gap-2 border h-full rounded-md py-2 px-3 cursor-pointer"
+    class="flex items-center justify-center gap-2 border h-full rounded-md py-2 px-3 cursor-pointer"
   >
     <p>Позиция</p>
     <img src="../../assets/images/positions.svg" alt="" />
