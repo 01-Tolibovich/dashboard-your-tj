@@ -161,6 +161,27 @@
   } 
 }
 
+@layer utilities {
+  .btn-open {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 300ms ease;
+  }
+  .btn-open.menuActive {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .btn-close {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 300ms ease;
+  }
+  .btn-close.menuActive {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .tox-edit-area__iframe, .tox-statusbar {
   background: #F3F4F6 !important;
 }

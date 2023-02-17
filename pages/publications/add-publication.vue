@@ -80,7 +80,10 @@
             <PositionPostPlace @buttonToggle="modal = !modal" />
           </div>
           <p>Ссылка</p>
-          <input class="bg-[#F3F4F6]" type="url" name="name" id="id" />
+          <div class="relative">
+            <input class="bg-[#F3F4F6]" type="url" name="link" id="link" /> 
+            <a class="absolute top-2/4 right-3 translate-y-[-50%]" href="#link">
+            <img  src="../../assets/images/edit.svg" alt=""></a></div>
           <Editor
             api-key="no-api-key"
             :init="{

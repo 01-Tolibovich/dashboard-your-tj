@@ -1,5 +1,5 @@
 <template>
-  <form class="_add-posts-form-slot">
+  <form class="_add-posts-form-slot bg-white">
     <slot></slot>
   </form>
 </template>
@@ -10,6 +10,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
