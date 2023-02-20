@@ -1,7 +1,6 @@
 <template>
   <div class="relative w-[210px]">
     <input
-      
       @mouseover="typeDateAndRemoveIcon"
       id="date"
       required=""

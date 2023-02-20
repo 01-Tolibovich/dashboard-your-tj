@@ -11,7 +11,7 @@
         <span class="text-sm">Содержимое</span>
         <textarea class="rounded-md border p-2" name="text" id="" cols="30" rows="10"></textarea>
       </div>
-      <button class="blue-button">Сохранить</button>
+      <button class="_blue-button">Сохранить</button>
     </form>
   </div>
 </template>

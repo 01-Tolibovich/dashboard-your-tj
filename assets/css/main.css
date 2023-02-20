@@ -126,6 +126,33 @@
   label {
     @apply pr-4
   }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+  }
+  select::-ms-expand {
+    display: none; 
+  }
+  ._select-wrap {
+    position: relative;
+  }
+  ._select-wrap::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/select_icon.png);
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 9px;
+    width: 10px;
+    height: 5px;
+    transition: 300ms ease-in;
+  }
+  ._select-wrap::after .rotate {
+    transform: translateY(-50%) rotate(180deg);
+  }
   ._position-post-place-select {
     margin: 0 !important;
   }
@@ -142,16 +169,19 @@
     @apply min-h-[50vh] bg-white rounded-md
   }
   ._table-value label {
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    @apply p-4 border-y border-[#E5E7EB]
+    text-overflow: ellipsis; */
+    @apply p-4 border-y border-[#E5E7EB] text-sm
+  }
+  ._status {
+    @apply whitespace-nowrap flex items-center text-xs
   }
   ._table-value small {
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    @apply p-4 border-y border-[#E5E7EB]
+    text-overflow: ellipsis; */
+    @apply p-4 border-y border-[#E5E7EB] font-[600] text-sm
   }
   ._table-value ._input {
     @apply p-4

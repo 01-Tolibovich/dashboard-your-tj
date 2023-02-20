@@ -4,9 +4,9 @@
       <button type="submit" class="absolute h-10">
         <img src="@/assets/images/search.svg" alt="" /></button
       ><input
-        class="h-10 w-full border border-[#D1D5DB] rounded-md"
-        type="text"
-        placeholder="            Поиск публикации"
+        class="h-10 w-full border border-[#D1D5DB] rounded-md pl-12"
+        type="search"
+        placeholder="Поиск публикации"
       />
     </form>
   </div>

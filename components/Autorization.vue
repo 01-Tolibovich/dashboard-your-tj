@@ -45,7 +45,7 @@
           </div>
 
           <div>
-            <button type="submit" class="blue-button">Войти</button>
+            <button type="submit" class="_blue-button">Войти</button>
           </div>
         </form>
       </div>

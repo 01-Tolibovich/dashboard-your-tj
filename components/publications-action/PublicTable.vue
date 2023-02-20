@@ -1,24 +1,55 @@
 <template>
   <div class="_table-wrap">
-    <div class="_table-value grid grid-cols-[min-content_repeat(1,_1fr)_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] lg:grid-cols-[min-content_1fr_repeat(5,_min-content)] xl:grid-cols-[min-content_1fr_repeat(6,_min-content)] bg-white">
-      <small class="font-bold"> </small>
-      <small class="font-bold border-l border-[#E5E7EB]">Заголовок</small>
-      <small class="hidden md:block font-bold">Администратор</small>
-      <small class="hidden md:block font-bold">Рубрики</small>
-      <small class="hidden lg:block font-bold">Просмотры</small>
-      <small class="hidden md:block font-bold">Статус</small>
-      <small class="hidden  xl:block font-bold border-r border-[#E5E7EB]">Дата</small>
-      <small class="font-bold "> </small>
+    <div
+      class="_table-value grid grid-cols-[min-content_repeat(1,_1fr)_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] lg:grid-cols-[min-content_1fr_repeat(5,_min-content)] xl:grid-cols-[min-content_1fr_repeat(6,_min-content)] bg-white"
+    >
+      <small class=""> </small>
+      <small class="border-l border-[#E5E7EB]">Заголовок</small>
+      <small class="hidden md:block">Администратор</small>
+      <small class="hidden md:block">Рубрики</small>
+      <small class="hidden lg:block">Просмотры</small>
+      <small class="hidden md:block">Статус</small>
+      <small class="hidden xl:block border-r border-[#E5E7EB]">Дата</small>
+      <small class=" "> </small>
 
-      <template v-for="vulue in tableBody">
-        <div class="_input w-[50px] flex items-center justify-center border-y border-[#E5E7EB]"><input type="checkbox" id="value.id" name="value" /></div>
-        <label class="border-l border-[#E5E7EB]" for="">{{ vulue.title }}</label>
-        <label class="hidden md:block" for="">{{ vulue.admin }}</label>
-        <label class="hidden md:block" for="">{{ vulue.rubric }}</label>
-        <label class="hidden lg:block" for="">{{ vulue.whatch }}</label>
-        <label class="hidden md:block" for="">{{ vulue.status }}</label>
-        <label class="hidden xl:block border-r border-[#E5E7EB]" for="">{{ vulue.date }}</label>
-        <div class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"><img border-l src="../../assets/images/edit.svg" alt="" /></div>
+      <template v-for="value in tableBody">
+        <div
+          class="_input w-[50px] flex items-center justify-center border-y border-[#E5E7EB]"
+        >
+          <input type="checkbox" id="value.id" name="value" />
+        </div>
+        <label class="border-l border-[#E5E7EB] font-[500]" for="">{{
+          value.title
+        }}</label>
+        <label class="hidden md:block whitespace-nowrap " for="">{{ value.admin }}</label>
+        <label class="hidden md:block whitespace-nowrap " for="">{{ value.rubric }}</label>
+        <label class="hidden lg:block text-center" for="">{{ value.whatch }}</label>
+        <label
+          class="_status hidden md:flex px-[37px] py-[2px] justify-center"
+          
+          for=""
+          ><span 
+          :class="
+            value.status == 'Опубликовано'
+              ? 'bg-[#D1FAE5] text-[#065F46]'
+              : value.status == 'На редактировании'
+              ? 'bg-[#FEF3C7] text-[#92400E]'
+              : value.status == 'На доработку'
+              ? 'bg-[#FEE2E2] text-[#991B1B]'
+              : value.status == 'Черновик'
+              ? 'bg-[#E0E7FF] text-[#3730A3]'
+              : value.status == 'В корзине'
+              ? 'bg-[#F3F4F6] text-[#1F2937]'
+              : 'bg-[#F3F4F6] text-[#1F2937]'
+          "
+          class="items-center w-full text-center px-4 py-[2px] rounded-full">{{ value.status }}</span></label
+        >
+        <label class="hidden xl:block" for="">{{ value.date }}</label>
+        <div
+          class="_img border-y flex items-center justify-center w-[50px] border-l border-[#E5E7EB]"
+        >
+          <img border-l src="../../assets/images/edit.svg" alt="" />
+        </div>
       </template>
     </div>
   </div>
@@ -36,7 +67,7 @@ export default {
           admin: "Абуамриддин Гафуров",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "В корзине",
           date: "31.03.2021",
         },
         {
@@ -45,7 +76,7 @@ export default {
           admin: "Эшматов Тошмат",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "Черновик",
           date: "31.03.2021",
         },
         {
@@ -55,7 +86,7 @@ export default {
           admin: "Сиддиқав Абубакр",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "На доработку",
           date: "31.03.2021",
         },
         {
@@ -65,7 +96,7 @@ export default {
           admin: "Насруллоева Нилуфар",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "На редактировании",
           date: "31.03.2021",
         },
         {
@@ -85,7 +116,7 @@ export default {
           admin: "Тирандозов Табар",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "В корзине",
           date: "31.03.2021",
         },
         {
@@ -95,7 +126,7 @@ export default {
           admin: "Абдуллоев Будулай",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "Черновик",
           date: "31.03.2021",
         },
         {
@@ -105,11 +136,12 @@ export default {
           admin: "Асроров Хоҷа",
           rubric: "Life, People",
           whatch: "8.3k",
-          status: "Опубликовано",
+          status: "На доработку",
           date: "31.03.2021",
         },
       ],
     };
   },
+  methods: {},
 };
 </script>
