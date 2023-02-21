@@ -126,13 +126,13 @@
   label {
     @apply pr-4
   }
-  select {
+  /* select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     position: relative;
-  }
-  select::-ms-expand {
+  } */
+  /* select::-ms-expand {
     display: none; 
   }
   ._select-wrap {
@@ -152,7 +152,7 @@
   }
   ._select-wrap::after .rotate {
     transform: translateY(-50%) rotate(180deg);
-  }
+  } */
   ._position-post-place-select {
     margin: 0 !important;
   }

@@ -6,8 +6,9 @@
         <small class="font-bold"> </small>
         <small class="font-bold border-l border-[#E5E7EB]">Комментарий</small>
         <small class="font-bold hidden md:block">Публикация</small>
-        <small class=" font-bold hidden md:block">Статус</small>
         <small class="hidden md:block font-bold">Дата</small>
+        <small class=" font-bold hidden md:block">Статус</small>
+        
         <small class="font-bold"> </small>
   
         <template v-for="vulue in tableBody">

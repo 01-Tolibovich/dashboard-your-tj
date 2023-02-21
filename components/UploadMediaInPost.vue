@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="my-8">
+    <div class="mt-8">
       <p class="mb-3">Изображение</p>
       <BlueTransparentButton blueTransparentButton="Добавить медиафайл" />
     </div>

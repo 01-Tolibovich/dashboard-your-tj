@@ -36,7 +36,7 @@
             <option value="5">Рубрика 5</option>
           </select>
           <p>Теги</p>
-          <select name="rubric" id="rubric">
+          <select  name="rubric" id="rubric">
             <option value="1">Тег 1</option>
             <option value="2">Тег 2</option>
             <option value="3">Тег 3</option>

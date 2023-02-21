@@ -1,5 +1,5 @@
 <template>
-  <div class="main-component bg-white py-6 px-4 rounded-md grid grid-rows-2">
+  <div class="main-component bg-white py-6 px-4 rounded-md grid grid-rows-2 gap-4">
     <p class="row-start-1 row-end-2 text-sm font-bold">
       {{ main_component.text }}
     </p>
@@ -10,7 +10,7 @@
       class="_select-wrap row-start-1 row-end-3 justify-self-end self-end border rounded-[4px]"
     >
       <select
-        class="_select w-min pr-7"
+        class="_select w-min"
         name="date"
         id="date"
       >

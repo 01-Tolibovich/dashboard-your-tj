@@ -6,10 +6,10 @@
         <small class="font-bold"> </small>
         <small class="font-bold border-l border-[#E5E7EB]">Фото</small>
         <small class="font-bold">Заголовок</small>
-        <small class="font-bold hidden lg:block">Тип мероприятия</small>
-        <small class="hidden md:block font-bold">Просмотры</small>
-        <small class="hidden sm:block font-bold">Статус</small>
-        <small class="hidden lg:block font-bold">Дата</small>
+        <small class="font-bold hidden lg:block whitespace-nowrap">Тип мероприятия</small>
+        <small class="hidden md:block font-bold whitespace-nowrap">Просмотры</small>
+        <small class="hidden sm:block font-bold whitespace-nowrap">Статус</small>
+        <small class="hidden lg:block font-bold whitespace-nowrap">Дата</small>
         <small class="font-bold"> </small>
   
         <template v-for="vulue in tableBody">
