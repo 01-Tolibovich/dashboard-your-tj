@@ -6,10 +6,10 @@
       <small class=""> </small>
       <small class="border-l border-[#E5E7EB]">Заголовок</small>
       <small class="hidden md:block">Администратор</small>
-      <small class="hidden md:block">Рубрики</small>
-      <small class="hidden lg:block">Просмотры</small>
-      <small class="hidden md:block">Статус</small>
-      <small class="hidden xl:block border-r border-[#E5E7EB]">Дата</small>
+      <small class="hidden md:block text-center">Рубрики</small>
+      <small class="hidden lg:block text-center">Просмотры</small>
+      <small class="hidden md:block text-center">Статус</small>
+      <small class="hidden xl:block border-r border-[#E5E7EB] text-center">Дата</small>
       <small class=" "> </small>
 
       <template v-for="value in tableBody">
@@ -21,11 +21,11 @@
         <label class="border-l border-[#E5E7EB] font-[500]" for="">{{
           value.title
         }}</label>
-        <label class="hidden md:block whitespace-nowrap " for="">{{ value.admin }}</label>
+        <label @click="alertadmin" class="hidden md:block whitespace-nowrap " for="">{{ value.admin }}</label>
         <label class="hidden md:block whitespace-nowrap " for="">{{ value.rubric }}</label>
         <label class="hidden lg:block text-center" for="">{{ value.whatch }}</label>
         <label
-          class="_status hidden md:flex px-[37px] py-[2px] justify-center"
+          class="_status hidden md:flex justify-center px-4"
           
           for=""
           ><span 
@@ -42,14 +42,15 @@
               ? 'bg-[#F3F4F6] text-[#1F2937]'
               : 'bg-[#F3F4F6] text-[#1F2937]'
           "
-          class="items-center w-full text-center px-4 py-[2px] rounded-full">{{ value.status }}</span></label
+          class="items-center w-full text-center px-4 py-[2px] rounded-full">{{ value.status }}</span>
+          </label
         >
         <label class="hidden xl:block" for="">{{ value.date }}</label>
-        <div
+        <nuxt-link to="/publications/edit-publication/"
           class="_img border-y flex items-center justify-center w-[50px] border-l border-[#E5E7EB]"
         >
           <img border-l src="../../assets/images/edit.svg" alt="" />
-        </div>
+        </nuxt-link>
       </template>
     </div>
   </div>
@@ -69,6 +70,7 @@ export default {
           whatch: "8.3k",
           status: "В корзине",
           date: "31.03.2021",
+          filter: "Все"
         },
         {
           id: 2,
@@ -78,6 +80,7 @@ export default {
           whatch: "8.3k",
           status: "Черновик",
           date: "31.03.2021",
+          filter: "Опубликованные"
         },
         {
           id: 3,
@@ -88,6 +91,7 @@ export default {
           whatch: "8.3k",
           status: "На доработку",
           date: "31.03.2021",
+          filter: "На модерации"
         },
         {
           id: 4,
@@ -98,6 +102,7 @@ export default {
           whatch: "8.3k",
           status: "На редактировании",
           date: "31.03.2021",
+          filter: "На доработку"
         },
         {
           id: 5,
@@ -108,6 +113,7 @@ export default {
           whatch: "8.3k",
           status: "Опубликовано",
           date: "31.03.2021",
+          filter: "Черновики"
         },
         {
           id: 6,
@@ -118,6 +124,7 @@ export default {
           whatch: "8.3k",
           status: "В корзине",
           date: "31.03.2021",
+          filter: "Корзина"
         },
         {
           id: 7,
@@ -128,6 +135,7 @@ export default {
           whatch: "8.3k",
           status: "Черновик",
           date: "31.03.2021",
+          filter: "Заметки"
         },
         {
           id: 8,
@@ -138,10 +146,15 @@ export default {
           whatch: "8.3k",
           status: "На доработку",
           date: "31.03.2021",
+          filter: "Все"
         },
       ],
     };
   },
-  methods: {},
+  methods: {
+    alertadmin() {
+      alert()
+    }
+  },
 };
 </script>

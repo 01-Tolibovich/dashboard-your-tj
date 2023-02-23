@@ -4,29 +4,50 @@
       class="_table-value grid grid-cols-[repeat(2,_min-content)_1fr_min-content] sm:grid-cols-[repeat(2,_min-content)_1fr_repeat(2,_min-content)] md:grid-cols-[repeat(2,_min-content)_1fr_repeat(3,_min-content)] lg:grid-cols-[repeat(2,_min-content)_1fr_repeat(4,_min-content)] bg-white"
     >
       <small class="font-bold"> </small>
-      <small class="font-bold border-l border-[#E5E7EB]">Фото</small>
+      <small class="font-bold border-l border-[#E5E7EB] ">Фото</small>
       <small class="font-bold">Заголовок</small>
-      <small class="hidden md:block font-bold">Просмотры</small>
-      <small class="hidden sm:block font-bold">Статус</small>
-      <small class="hidden lg:block font-bold">Дата</small>
+      <small class="hidden md:block font-bold text-center">Просмотры</small>
+      <small class="hidden sm:block font-bold text-center">Статус</small>
+      <small class="hidden lg:block font-bold text-center">Дата</small>
       <small class="font-bold"> </small>
 
-      <template v-for="vulue in tableBody">
+      <template v-for="value in tableBody">
         <div
           class="_input w-[50px] flex items-center justify-center border-y border-[#E5E7EB]"
         >
           <input type="checkbox" id="value.id" name="value" />
         </div>
-        <div class="border-l border-y border-[#E5E7EB] flex items-center justify-center "><img :src="require(`../../assets/images/${vulue.img}`)" alt=""></div>
-        <label for="">{{ vulue.title }}</label>
-        <label class="hidden md:block" for="">{{ vulue.whatch }}</label>
-        <label class="hidden sm:block" for="">{{ vulue.status }}</label>
-        <label class="hidden lg:block" for="">{{ vulue.date }}</label>
         <div
+          class="border-l border-y border-[#E5E7EB] flex items-center justify-center"
+        >
+          <img :src="require(`../../assets/images/${value.img}`)" alt="" />
+        </div>
+        <label for="">{{ value.title }}</label>
+        <label class="hidden md:block text-center" for="">{{ value.whatch }}</label>
+        <label
+          class="hidden sm:flex "
+          for=""
+          ><span
+          class="items-center w-full text-center px-4 py-[2px] rounded-full whitespace-nowrap"
+            :class="
+              value.status == 'Одобрено'
+                ? 'bg-[#D1FAE5] text-[#065F46]'
+                : value.status == 'На модерации'
+                ? 'bg-[#FEF3C7] text-[#92400E]'
+                : value.status == 'Отказано'
+                ? 'bg-[#FEE2E2] text-[#991B1B]'
+                : 'bg-[#F3F4F6] text-[#1F2937]'
+            "
+            >{{ value.status }}</span
+          ></label
+        >
+        <label class="hidden lg:block" for="">{{ value.date }}</label>
+        <nuxt-link
+          to="affiche/edit-affiche"
           class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"
         >
           <img border-l src="../../assets/images/edit.svg" alt="" />
-        </div>
+        </nuxt-link>
       </template>
     </div>
   </div>
@@ -51,7 +72,7 @@ export default {
           img: "Avatar.jpg",
           title: "Фото и видео выставка синематик проекта...",
           whatch: "8.2k",
-          status: "Одобрено",
+          status: "На модерации",
           date: "31.03.2021",
         },
         {
@@ -59,7 +80,7 @@ export default {
           img: "Avatar.jpg",
           title: "Фото и видео выставка синематик проекта...",
           whatch: "7.3k",
-          status: "Одобрено",
+          status: "Отказано",
           date: "31.03.2021",
         },
         {
@@ -75,7 +96,7 @@ export default {
           img: "Avatar.jpg",
           title: "Фото и видео выставка синематик проекта...",
           whatch: "9.3k",
-          status: "Одобрено",
+          status: "На модерации",
           date: "31.03.2021",
         },
         {
@@ -83,7 +104,7 @@ export default {
           img: "Avatar.jpg",
           title: "Фото и видео выставка синематик проекта...",
           whatch: "9.3k",
-          status: "Одобрено",
+          status: "Отказано",
           date: "31.03.2021",
         },
         {
@@ -99,7 +120,7 @@ export default {
           img: "Avatar.jpg",
           title: "Фото и видео выставка синематик проекта...",
           whatch: "6.3k",
-          status: "Одобрено",
+          status: "На модерации",
           date: "31.03.2021",
         },
       ],

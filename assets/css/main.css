@@ -75,7 +75,7 @@
 
 @layer components {
   button {
-    @apply px-4 py-2 text-sm
+    @apply px-5 py-2 text-sm
   }
   ._blue-button {
     @apply flex items-center h-auto gap-3 justify-center  rounded-md border border-transparent bg-[#0048B7] font-medium text-white shadow-sm hover:bg-[#4338CA] focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:ring-offset-2 

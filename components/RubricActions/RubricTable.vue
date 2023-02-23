@@ -22,11 +22,11 @@
         <label class="hidden md:block" for="">{{ vulue.discription }}</label>
         <label class="" for="">{{ vulue.posts }}</label>
         <label class="hidden md:block" for="">{{ vulue.date }}</label>
-        <div
+        <nuxt-link to="rubrics/edit-rubric/"
           class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"
         >
           <img border-l src="../../assets/images/edit.svg" alt="" />
-        </div>
+        </nuxt-link>
       </template>
     </div>
   </div>

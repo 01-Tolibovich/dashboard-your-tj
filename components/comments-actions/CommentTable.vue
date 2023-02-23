@@ -11,23 +11,31 @@
         
         <small class="font-bold"> </small>
   
-        <template v-for="vulue in tableBody">
+        <template v-for="value in tableBody">
           <div
             class="_input w-[50px] flex items-center justify-center border-y border-[#E5E7EB]"
           >
             <input type="checkbox" id="value.id" name="value" />
           </div>
           <label class="border-l border-[#E5E7EB]" for="">{{
-            vulue.comment
+            value.comment
           }}</label>
-          <label class="hidden md:block" for="">{{ vulue.public }}</label>
-          <label class="hidden md:block" for="">{{ vulue.status }}</label>
-          <label class="hidden md:block" for="">{{ vulue.date }}</label>
-          <div
+          <label class="hidden md:block" for="">{{ value.public }}</label>
+          <label class="hidden md:flex justify-center items-center" for=""><span 
+            :class="
+            value.status == 'Одобрено'
+              ? 'bg-[#D1FAE5] text-[#065F46]'
+              : value.status == 'На модерации'
+              ? 'bg-[#FEF3C7] text-[#92400E]'
+              : 'bg-[#F3F4F6] text-[#1F2937]'
+          "
+            class="items-center w-full text-center px-4 py-[2px] rounded-full whitespace-nowrap">{{ value.status }}</span></label>
+          <label class="hidden md:block" for="">{{ value.date }}</label>
+          <nuxt-link to="comments/edit-comment"
             class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"
           >
             <img border-l src="../../assets/images/edit.svg" alt="" />
-          </div>
+          </nuxt-link>
         </template>
       </div>
     </div>
@@ -50,7 +58,7 @@
             id: 1,
             comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
             public: "Выставки",
-            status: "Одобрено",
+            status: "На модерации",
             date: "31.03.2021",
           },
           {
@@ -64,7 +72,21 @@
             id: 1,
             comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
             public: "Выставки",
-            status: "Одобрено",
+            status: "На модерации",
+            date: "31.03.2021",
+          },
+          {
+            id: 1,
+            comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
+            public: "Выставки",
+            status: "На модерации",
+            date: "31.03.2021",
+          },
+          {
+            id: 1,
+            comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
+            public: "Выставки",
+            status: "На модерации",
             date: "31.03.2021",
           },
           {
@@ -78,21 +100,7 @@
             id: 1,
             comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
             public: "Выставки",
-            status: "Одобрено",
-            date: "31.03.2021",
-          },
-          {
-            id: 1,
-            comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
-            public: "Выставки",
-            status: "Одобрено",
-            date: "31.03.2021",
-          },
-          {
-            id: 1,
-            comment: "Эксперты просыпаются и собираются на работу, мы с вами поболтаем в комментариях. Уважаемый Автор, поделитесь о том, как прошли ваши зимние каникулы?",
-            public: "Выставки",
-            status: "Одобрено",
+            status: "На модерации",
             date: "31.03.2021",
           },
         ],

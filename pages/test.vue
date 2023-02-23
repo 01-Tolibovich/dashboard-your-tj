@@ -6,6 +6,8 @@
       <option selected="">Canada</option>
       <option>Mexico</option>
     </select>
+    <input type="datetime" name="" id="">
+    <input type="datetime-local" name="" id="">
   </div>
 </template>
 

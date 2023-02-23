@@ -14,8 +14,8 @@
       for="fileInput"
       >{{ blueTransparentButton }}</label
     >
-    <div class="relative inline-block">
-      <img class="preview" :src="imageData" />
+    <div class="relative inline-block max-w-[410px] w-full h-auto">
+      <img class="preview max-w-[410px] w-full h-auto" :src="imageData" />
       <div v-if="imageData" class="absolute bottom-0 flex w-full justify-between p-4"><label class="text-[#0048B7] text-[10px] bg-white px-3 py-2 rounded-md font-[500] cursor-pointer" for="fileInput">Изменить</label>
         <label @click="imageData = ''" class="text-[#0048B7] text-[10px] bg-white px-3 py-2 rounded-md font-[500] cursor-pointer">Удалить</label></div>
     </div>

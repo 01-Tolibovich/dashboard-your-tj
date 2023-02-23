@@ -2,18 +2,19 @@
   <div class="publications">
     <HeadGrid>
       <headTitle head_title="Публикации" />
-      <AddButton @click="$router.push('/publications/add-publication/')"/>
+      <AddButton @click="$router.push('/publications/add-publication/')" />
     </HeadGrid>
 
     <div class="flex flex-wrap bg-white rounded-lg">
       <ParameterFilter
+        @filter="selectFilter"
         v-for="parameteres in filter"
         :key="parameteres.index"
         :parameter_filter="parameteres"
       />
     </div>
     <ButtonAndSearch></ButtonAndSearch>
-    <PublicTable/>
+    <PublicTable  />
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
     >
@@ -89,6 +90,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    selectFilter() {
+      console.log(this.PublicTable)
+    },
   },
 };
 </script>

@@ -10,7 +10,7 @@
       />
     </div>
     <ButtonAndSearch></ButtonAndSearch>
-    <CommentTable/>
+    <CommentTable />
     <div
       class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] p-5 bg-white rounded-b-lg gap-4"
     >

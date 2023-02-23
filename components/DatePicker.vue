@@ -32,7 +32,7 @@ export default {
   methods: {
     typeDateAndRemoveIcon() {
       this.icon = false;
-      this.text = "date";
+      this.text = "datetime-local";
     },
   },
 };
