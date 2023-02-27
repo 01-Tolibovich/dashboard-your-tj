@@ -1,14 +1,14 @@
 <template>
   <div class="_table-wrap">
     <div
-      class="_table-value grid grid-cols-[repeat(2,_min-content)_1fr_min-content] sm:grid-cols-[repeat(2,_min-content)_1fr_repeat(2,_min-content)] md:grid-cols-[repeat(2,_min-content)_1fr_repeat(3,_min-content)] lg:grid-cols-[repeat(2,_min-content)_1fr_repeat(4,_min-content)] bg-white"
+      class="_table-value grid grid-cols-[repeat(2,_min-content)_1fr_min-content] sm:grid-cols-[repeat(2,_min-content)_1fr_repeat(2,_min-content)] md:grid-cols-[repeat(2,_min-content)_1fr_repeat(3,_min-content)] lg:grid-cols-[repeat(2,_min-content)_1fr_repeat(3,_220px)_min-content] bg-white"
     >
       <small class="font-bold"> </small>
       <small class="font-bold border-l border-[#E5E7EB] ">Фото</small>
-      <small class="font-bold">Заголовок</small>
-      <small class="hidden md:block font-bold text-center">Просмотры</small>
-      <small class="hidden sm:block font-bold text-center">Статус</small>
-      <small class="hidden lg:block font-bold text-center">Дата</small>
+      <small class="font-bold md:_text-left">Заголовок</small>
+      <small class="hidden md:flex font-bold text-center">Просмотры</small>
+      <small class="hidden sm:flex font-bold text-center">Статус</small>
+      <small class="hidden lg:flex font-bold text-center">Дата</small>
       <small class="font-bold"> </small>
 
       <template v-for="value in tableBody">
@@ -22,10 +22,10 @@
         >
           <img :src="require(`../../assets/images/${value.img}`)" alt="" />
         </div>
-        <label for="">{{ value.title }}</label>
-        <label class="hidden md:block text-center" for="">{{ value.whatch }}</label>
+        <label class="md:_text-left" for="">{{ value.title }}</label>
+        <label class="hidden md:flex text-center" for="">{{ value.whatch }}</label>
         <label
-          class="hidden sm:flex "
+          class="hidden sm:flex items-center "
           for=""
           ><span
           class="items-center w-full text-center px-4 py-[2px] rounded-full whitespace-nowrap"
@@ -41,7 +41,7 @@
             >{{ value.status }}</span
           ></label
         >
-        <label class="hidden lg:block" for="">{{ value.date }}</label>
+        <label class="hidden lg:flex" for="">{{ value.date }}</label>
         <nuxt-link
           to="affiche/edit-affiche"
           class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"

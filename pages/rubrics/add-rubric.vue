@@ -16,7 +16,11 @@
         <textarea name="" id="" cols="30" rows="5"></textarea>
         <div class="flex gap-5">
           <button class="_blue-button">Сохранить</button>
-          <button class="_grey-botton">Отменить</button>
+          <span
+            v-on:click="$router.push('/rubrics')"
+            class="_grey-botton flex items-center justify-center px-5 py-2 cursor-pointer"
+            >Отменить</span
+          >
         </div>
       </AddPostsFormSlot>
     </MainBg>

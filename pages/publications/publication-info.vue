@@ -1,8 +1,9 @@
 <template>
-  <div class="_edit-comment ">
-    <HeadGrid><headTitle head_title="Комментарии" /></HeadGrid>
+  <div class="_publication-info ">
+    <HeadGrid><headTitle head_title="Информация о публикации" /></HeadGrid>
     <MainBg>
-      <div class=" grid grid-cols-1 md:grid-cols-3 _full-info">
+      <div class="grid grid-cols-1 md:grid-cols-3 _full-info">
+        <h2 class="md:col-span-3 text-[#0048B7] text-lg font-[500] mb-[14px]">Автор</h2>
         <div>
           <small>Имя</small>
           <p>Абуамриддин</p>
@@ -15,8 +16,21 @@
           <small>Электронная почта</small>
           <p>index@mail.com</p>
         </div>
+        <h2 class="md:col-span-3 text-[#0048B7] text-lg font-[500] mb-[14px]">Редактор</h2>
         <div>
-          <small>Название публикации</small>
+          <small>Имя</small>
+          <p>Гафур</p>
+        </div>
+        <div>
+          <small>Фамилия</small>
+          <p>Абуамриддин</p>
+        </div>
+        <div>
+          <small>Электронная почта</small>
+          <p>index@mail.com</p>
+        </div>
+        <div>
+          <small >Название публикации</small>
           <nuxt-link to="#">Новогодние будни</nuxt-link>
         </div>
         <div>
@@ -36,8 +50,11 @@
           </p>
         </div>
       </div>
-      <div class="mt-6 flex flex-wrap gap-6"><button class=" _blue-transparent-button">Одобрить</button><button class="_red-transparent-button">Удалить</button><button @click="$router.push('/comments')" class=" _blue-button">Назад</button></div>
-      
+      <div class="mt-6 flex flex-wrap gap-6">
+        <button v-on:click="$router.push('/publications')" class="_blue-button">Перейти к публикации</button
+        ><button v-on:click="$router.push('/publications')" class="_grey-botton">Назад</button
+        >
+      </div>
     </MainBg>
   </div>
 </template>
@@ -47,25 +64,7 @@ import HeadGrid from "@/components/Header/HeadGrid";
 import headTitle from "@/components/Header/headTitle.vue";
 import MainBg from "@/components/MainBg.vue";
 export default {
-  name: "edit-comment",
+  name: "publications-info",
   components: { HeadGrid, headTitle, MainBg },
 };
 </script>
-
-<!-- <style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  ._edit-comment small {
-    @apply text-sm block text-[#4B5563];
-  }
-  ._edit-comment p {
-    @apply text-base;
-  }
-  ._edit-comment a {
-    @apply text-[#0048B7]
-  }
-}
-</style> -->

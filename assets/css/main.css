@@ -69,6 +69,9 @@
   ._add-posts-form-slot select {
     @apply mt-2 mb-6
   }
+  textarea {
+    @apply p-4
+  }
 
 }
 
@@ -160,10 +163,10 @@
     @apply text-center
   }
   ._layoul-positions div {
-    @apply flex flex-col items-center justify-center cursor-pointer
+    @apply flex flex-col items-center justify-center cursor-pointer rounded-md
   }
   ._layoul-positions div h2 {
-    @apply text-4xl
+    @apply text-sm
   }
   ._table-wrap {
     @apply min-h-[50vh] bg-white rounded-md
@@ -175,20 +178,42 @@
     @apply p-4 border-y border-[#E5E7EB] text-sm
   }
   ._status {
-    @apply whitespace-nowrap flex items-center text-xs
+    @apply whitespace-nowrap items-center text-xs
   }
   ._table-value small {
     /* white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; */
-    @apply p-4 border-y border-[#E5E7EB] font-[600] text-sm
+    @apply p-4 border-y border-[#E5E7EB] font-[600] text-sm items-center justify-center
+  }
+  ._table-value label {
+    @apply items-center justify-center
+  }
+  ._table-value a {
+    @apply border-l
+  }
+  ._table-value ._text-left {
+    @apply flex justify-start items-center
   }
   ._table-value ._input {
     @apply p-4
   }
   ._table-value ._img {
     @apply p-4
-  } 
+  }
+
+  ._full-info small {
+    @apply text-sm block text-[#4B5563] mb-2;
+  }
+  ._full-info p {
+    @apply text-base;
+  }
+  ._full-info a {
+    @apply text-[#0048B7]
+  }
+  ._full-info div {
+    @apply mb-9
+  }
 }
 
 @layer utilities {

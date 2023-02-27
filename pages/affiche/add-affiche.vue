@@ -46,19 +46,47 @@
           <div></div>
         </div>
         <section>
-          <UploadMediaInPost/>
+          <UploadMediaInPost />
           <p>Заголовок</p>
-          <input type="text" name="" id="" placeholder="Введите заголовок">
+          <input
+            v-model="inputTitle"
+            type="text"
+            name=""
+            id=""
+            placeholder="Введите заголовок"
+          />
           <p>Адрес</p>
-          <input type="text" name="" id="" placeholder="Введите адрес">
+          <input
+            v-model="inputAdress"
+            type="text"
+            name=""
+            id=""
+            placeholder="Введите адрес"
+          />
           <p>Ссылка на сайт</p>
-          <input type="url" name="" id="" placeholder="Введите ссылку">
+          <input
+            v-model="inputUrl"
+            type="url"
+            name=""
+            id=""
+            placeholder="Введите ссылку"
+          />
           <p>Описание</p>
-          <textarea name="" id="" cols="30" rows="6"></textarea>
+          <textarea
+            v-model="textariaValue"
+            name=""
+            id=""
+            cols="30"
+            rows="6"
+          ></textarea>
           <div class="flex flex-wrap gap-5">
-            <button class="_blue-button">Опубликовать</button><button class="_grey-botton">Отменить</button>
+            <button class="_blue-button">Опубликовать</button
+            ><span
+              v-on:click="$router.push('/affiche')"
+              class="_grey-botton flex items-center justify-center px-5 py-2 cursor-pointer"
+              >Отменить</span
+            >
           </div>
-          
         </section>
       </AddPostsFormSlot>
     </MainBg>
@@ -86,7 +114,19 @@ export default {
   data() {
     return {
       showInput: false,
+      // inputTitle: "",
+      // inputAdress: "",
+      // inputUrl: "",
+      // textariaValue: "",
     };
+  },
+  methods: {
+    resetValues() {
+      // this.inputTitle = "";
+      // this.inputAdress = "";
+      // this.inputUrl = "";
+      // this.textariaValue = "";
+    },
   },
 };
 </script>

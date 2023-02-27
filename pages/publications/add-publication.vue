@@ -36,7 +36,7 @@
             <option value="5">Рубрика 5</option>
           </select>
           <p>Теги</p>
-          <select  name="rubric" id="rubric">
+          <select name="rubric" id="rubric">
             <option value="1">Тег 1</option>
             <option value="2">Тег 2</option>
             <option value="3">Тег 3</option>
@@ -81,9 +81,11 @@
           </div>
           <p>Ссылка</p>
           <div class="relative">
-            <input class="bg-[#F3F4F6]" type="url" name="link" id="link" /> 
+            <input class="bg-[#F3F4F6]" type="url" name="link" id="link" />
             <a class="absolute top-2/4 right-3 translate-y-[-50%]" href="#link">
-            <img  src="../../assets/images/edit.svg" alt=""></a></div>
+              <img src="../../assets/images/edit.svg" alt=""
+            /></a>
+          </div>
           <Editor
             api-key="no-api-key"
             :init="{
@@ -100,12 +102,15 @@
             <p class="mt-6 mb-2">{{ select_file_input }}</p>
             <div class="grid grid-flow-col items-center grid-cols-1">
               <input
+                v-on:click="previewPost = true"
                 class="col-start-1 col-end-2 row-start-1 row-end-2"
                 type="file"
                 ref="fileInput2"
                 name="selectFile"
                 id="fileInput2"
                 placeholder="Введите заголовок"
+                @change="previewImage"
+                accept="image/*"
               />
               <label
                 class="col-start-1 col-end-2 row-start-1 row-end-2 min-w-min w-[134px] text-white rounded-l-md bg-[#BCC1C9] h-[32px] flex items-center justify-center m-0"
@@ -115,19 +120,50 @@
             </div>
           </div>
           <p>Заголовок в Facebook</p>
-          <input type="text" name="" id="" placeholder="Введите заголовок" />
+          <input
+            v-on:click="previewPost = true"
+            v-bind="titleValue"
+            v-on:input="titleValueInput"
+            type="text"
+            name=""
+            id=""
+            placeholder="Введите заголовок"
+          />
           <p>Описание в Facebook</p>
-          <textarea name="" id="" rows="10"></textarea>
+          <textarea
+            v-on:click="previewPost = true"
+            v-bind="paragraphValue"
+            v-on:input="paragraphValueInput"
+            name=""
+            id=""
+            rows="10"
+          ></textarea>
+          <div class="mt-6">
+            <p>Предварительный просмотр</p>
+            <div
+              v-show="previewPost"
+              class="max-w-[600px] rounded-lg border mt-2"
+            >
+              <img class="rounded-t-lg mb-4" :src="imageData" alt="" />
+              <div class="mb-8 mx-6 min-h-[180px]">
+                <span class="text-[#65676B] up text-[12px] mb-2">YOUR.TJ</span>
+                <h2>{{ titleValue }}</h2>
+                <p class="text-[#65676B] my-3 text-base">
+                  {{ paragraphValue }}
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
         <section class="bg-[#F3F4F6] p-7 rounded-md mt-6">
-          <p>Комментарий для Автора*</p>
+          <p>Комментарий для Автора</p>
           <textarea name="" id="" rows="10"></textarea>
         </section>
         <div class="my-6 flex gap-5 flex-wrap justify-between">
           <div class="flex gap-5 flex-wrap">
             <button class="_blue-button">Опубликовать</button>
             <button class="_red-transparent-button">На доработку</button>
-            <button class="_grey-botton">Отменить</button>
+            <button class="_grey-botton">В черновик</button>
           </div>
           <div>
             <button class="_blue-transparent-button">
@@ -155,6 +191,7 @@ import UploadMediaInPost from "@/components/UploadMediaInPost.vue";
 import PositionPostPlace from "@/components/buttons/PositionPostPlace.vue";
 import LayoultPositions from "@/components/LayoultPositions.vue";
 import Editor from "@tinymce/tinymce-vue";
+import PreviewForSocial from "@/components/PreviewForSocial.vue";
 export default {
   name: "add-publications",
   components: {
@@ -167,11 +204,43 @@ export default {
     PositionPostPlace,
     LayoultPositions,
     Editor,
+    PreviewForSocial,
   },
   data() {
     return {
       modal: false,
+      imageData: "", // мы будем хранить формат base64 изображения в этой строке
+      titleValue: "",
+      paragraphValue: "",
+      previewPost: false,
     };
+  },
+  methods: {
+    previewImage: function (event) {
+      // Ссылка на элемент ввода DOM
+      var input = event.target;
+      // Убедитесь, что у вас есть файл, прежде чем пытаться его прочитать
+      if (input.files && input.files[0]) {
+        // создать новый FileReader для чтения этого изображения и преобразования в формат base64
+        var reader = new FileReader();
+        // Определите функцию обратного вызова, которая будет выполняться, когда FileReader завершит свою работу
+        reader.onload = (e) => {
+          // Примечание: здесь используется функция arrow, так что "this.imageData" ссылается на imageData компонента Vue
+          // Считать изображение в формате base64 и установить в imageData
+          this.imageData = e.target.result;
+        };
+        // Запуск задания чтения - чтение файла как url данных (формат base64)
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        this.imageData = "";
+      }
+    },
+    titleValueInput() {
+      this.titleValue = event.target.value;
+    },
+    paragraphValueInput() {
+      this.paragraphValue = event.target.value;
+    },
   },
 };
 </script>

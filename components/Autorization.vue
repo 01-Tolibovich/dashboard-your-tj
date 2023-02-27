@@ -1,13 +1,17 @@
 <template>
-  <div class="flex min-h-[90vh] flex-col justify-center py-12 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md my-6">
-      <div class="mx-auto hidden sm:block">
-        <img class="mx-auto" src="../assets/images/your.png" alt="your" />
+  <form
+    @submit.prevent="onSubmit"
+    class="flex min-h-[90vh] flex-col justify-center py-12 sm:px-6 lg:px-8 px-4"
+  >
+    <div class="sm:mx-auto sm:w-full sm:max-w-md shadow-md">
+      <div
+        class="mx-auto w-full bg-white pt-8 rounded-t-lg sm:mx-auto sm:w-full sm:max-w-md"
+      >
+        <div class="mx-auto">
+          <img class="mx-auto" src="../assets/images/your.png" alt="your" />
+        </div>
       </div>
-    </div>
-
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10">
         <h2 class="text-center mt-4 mb-8 text-2xl">Войдите в аккаунт</h2>
         <form class="space-y-6" action="#" method="POST">
           <div>
@@ -50,7 +54,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -58,5 +62,10 @@ import AddButton from "./buttons/AddButton.vue";
 export default {
   name: "autorization",
   components: { AddButton },
+  methods: {
+    onSubmit() {
+      this.$store.dispatch("login");
+    },
+  },
 };
 </script>

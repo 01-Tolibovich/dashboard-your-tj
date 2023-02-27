@@ -91,7 +91,7 @@
               }"
             />
           </section>
-          <section class="bg-[#F3F4F6] p-7 rounded-md">
+          <section class="bg-[#F3F4F6] p-7 rounded-md hidden">
             <div>
               <NeoButton neo_button="Соцсети" />
               <NeoButton neo_button="SEO" />
@@ -127,7 +127,7 @@
             <div class="flex gap-5 flex-wrap">
               <button class="_blue-button">Опубликовать</button>
               <button class="_red-transparent-button">На доработку</button>
-              <button class="_grey-botton">Отменить</button>
+              <button class="_grey-botton">В черновик</button>
             </div>
             <div>
               <button class="_blue-transparent-button">

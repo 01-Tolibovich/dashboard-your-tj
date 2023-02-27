@@ -1,3 +1,4 @@
+<!-- NOT ACTIVE COMPONENT!!! -->
 <template>
   <div>
     <h2>Автор</h2>
@@ -7,6 +8,7 @@
     <p>Гафуров</p>
     <small>Электронная почта</small>
     <p>index@mail.com</p>
+    oiuhkpouopiuj 
 
     <h2>Редактор</h2>
     <small>Имя</small>

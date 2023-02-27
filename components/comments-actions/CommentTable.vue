@@ -1,13 +1,13 @@
 <template>
     <div class="_table-wrap">
       <div
-        class="_table-value grid grid-cols-[min-content_1fr_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] bg-white"
+        class="_table-value grid grid-cols-[min-content_1fr_min-content] md:grid-cols-[min-content_1fr_repeat(3,_200px)_min-content] bg-white"
       >
         <small class="font-bold"> </small>
-        <small class="font-bold border-l border-[#E5E7EB]">Комментарий</small>
-        <small class="font-bold hidden md:block">Публикация</small>
-        <small class="hidden md:block font-bold">Дата</small>
-        <small class=" font-bold hidden md:block">Статус</small>
+        <small class="font-bold border-l border-[#E5E7EB] _text-left">Комментарий</small>
+        <small class="font-bold hidden md:flex">Публикация</small>
+        <small class="hidden md:flex font-bold">Дата</small>
+        <small class=" font-bold hidden md:flex">Статус</small>
         
         <small class="font-bold"> </small>
   
@@ -17,10 +17,10 @@
           >
             <input type="checkbox" id="value.id" name="value" />
           </div>
-          <label class="border-l border-[#E5E7EB]" for="">{{
+          <label class="border-l border-[#E5E7EB] _text-left" for="">{{
             value.comment
           }}</label>
-          <label class="hidden md:block" for="">{{ value.public }}</label>
+          <label class="hidden md:flex" for="">{{ value.public }}</label>
           <label class="hidden md:flex justify-center items-center" for=""><span 
             :class="
             value.status == 'Одобрено'
@@ -30,7 +30,7 @@
               : 'bg-[#F3F4F6] text-[#1F2937]'
           "
             class="items-center w-full text-center px-4 py-[2px] rounded-full whitespace-nowrap">{{ value.status }}</span></label>
-          <label class="hidden md:block" for="">{{ value.date }}</label>
+          <label class="hidden md:flex" for="">{{ value.date }}</label>
           <nuxt-link to="comments/edit-comment"
             class="_img border-y border-[#E5E7EB] flex items-center justify-center w-[50px]"
           >

@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-menu p-7 relative">
+  <div class=" sidebar-menu p-7 relative">
     <div class="fixed">
       <header class="mb-[40px] mt-4 mx-auto">
         <img class="mx-auto" src="../assets/images/your.png" alt="your" />

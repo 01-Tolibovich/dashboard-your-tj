@@ -4,12 +4,12 @@
       class="_table-value grid grid-cols-[min-content_repeat(1,_1fr)_min-content] md:grid-cols-[min-content_1fr_repeat(4,_min-content)] lg:grid-cols-[min-content_1fr_repeat(5,_min-content)] xl:grid-cols-[min-content_1fr_repeat(6,_min-content)] bg-white"
     >
       <small class=""> </small>
-      <small class="border-l border-[#E5E7EB]">Заголовок</small>
-      <small class="hidden md:block">Администратор</small>
-      <small class="hidden md:block text-center">Рубрики</small>
-      <small class="hidden lg:block text-center">Просмотры</small>
-      <small class="hidden md:block text-center">Статус</small>
-      <small class="hidden xl:block border-r border-[#E5E7EB] text-center">Дата</small>
+      <small class="border-l border-[#E5E7EB] _text-left">Заголовок</small>
+      <small class="hidden md:flex md:_text-left">Администратор</small>
+      <small class="hidden md:flex text-center">Рубрики</small>
+      <small class="hidden lg:flex text-center">Просмотры</small>
+      <small class="hidden md:flex text-center">Статус</small>
+      <small class="hidden xl:flex border-r border-[#E5E7EB] text-center">Дата</small>
       <small class=" "> </small>
 
       <template v-for="value in tableBody">
@@ -18,12 +18,12 @@
         >
           <input type="checkbox" id="value.id" name="value" />
         </div>
-        <label class="border-l border-[#E5E7EB] font-[500]" for="">{{
+        <label @click="$router.push('/publications/publication-info')" class="border-l border-[#E5E7EB] font-[500] cursor-pointer _text-left" for="">{{
           value.title
         }}</label>
-        <label @click="alertadmin" class="hidden md:block whitespace-nowrap " for="">{{ value.admin }}</label>
-        <label class="hidden md:block whitespace-nowrap " for="">{{ value.rubric }}</label>
-        <label class="hidden lg:block text-center" for="">{{ value.whatch }}</label>
+        <label @click="$router.push('/publications/publication-info')" class="hidden md:flex whitespace-nowrap cursor-pointer md:_text-left " for="">{{ value.admin }}</label>
+        <label class="hidden md:flex whitespace-nowrap " for="">{{ value.rubric }}</label>
+        <label class="hidden lg:flex text-center" for="">{{ value.whatch }}</label>
         <label
           class="_status hidden md:flex justify-center px-4"
           
@@ -45,7 +45,7 @@
           class="items-center w-full text-center px-4 py-[2px] rounded-full">{{ value.status }}</span>
           </label
         >
-        <label class="hidden xl:block" for="">{{ value.date }}</label>
+        <label class="hidden xl:flex" for="">{{ value.date }}</label>
         <nuxt-link to="/publications/edit-publication/"
           class="_img border-y flex items-center justify-center w-[50px] border-l border-[#E5E7EB]"
         >

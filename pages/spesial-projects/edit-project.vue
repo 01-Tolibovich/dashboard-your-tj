@@ -12,7 +12,11 @@
         <input type="url" name="" id="" placeholder="Введите ссылку" />
         <div class="flex gap-5">
           <button class="_blue-button">Опубликовать</button>
-          <button class="_grey-botton">Отменить</button>
+          <span
+            v-on:click="$router.push('/spesial-projects')"
+            class="_grey-botton flex items-center justify-center px-5 py-2 cursor-pointer"
+            >Отменить</span
+          >
         </div>
       </AddPostsFormSlot>
     </MainBg>
