@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="relative">
     <div
-      class="top-admin grid grid-rows-2 grid-cols-1 justify-items-end px-8 py-2 items-center gap-x-4 shadow-black bg-white"
+      class="top-admin grid grid-rows-2 grid-cols-1 justify-items-end px-8 py-2 items-center gap-x-4 shadow-black z-10 bg-white absolute top-0 left-0 w-full"
     >
       <!-- button -->
       <div
@@ -35,12 +35,26 @@
         Администратор
       </p>
       <img
+        @click="toggleProfile = !toggleProfile"
         class="row-start-1 row-end-3 rounded-full hidden sm:block"
         src="../assets/images/Avatar profile.jpg"
         alt=""
       />
     </div>
-    <!-- <div ><a href="#" >Профиль</a><a href="#">Выход</a></div> -->
+    <div
+      :class="{ open_profile: toggleProfile }"
+      class="absolute right-8 flex flex-col translate-y-[-100%] ease-in duration-300"
+    >
+      <a
+        class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB]"
+        href="#"
+        >Профиль</a
+      ><a
+        class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB]"
+        href="#"
+        >Выход</a
+      >
+    </div>
   </div>
 </template>
 
@@ -50,6 +64,7 @@ export default {
   data() {
     return {
       toggleMenu: false,
+      toggleProfile: false,
     };
   },
 };

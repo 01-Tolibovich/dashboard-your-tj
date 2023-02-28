@@ -3,7 +3,7 @@
         <sidebarMenu class="hidden xl:block"/>
         <div class="border-l border-[#E5E7EB] z-10 bg-[#F8F8F9] min-h-screen w-full overflow-x-hidden">
             <topAdmin/>
-            <Nuxt class="px-8"/>
+            <Nuxt class="px-8 mt-[100px] "/>
         </div>
     </div>
 </template>

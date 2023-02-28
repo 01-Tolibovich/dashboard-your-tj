@@ -236,6 +236,9 @@
     transform: translateX(0);
     opacity: 1;
   }
+  .open_profile {
+    @apply translate-y-[72px]
+  }
 }
 .tox-edit-area__iframe, .tox-statusbar {
   background: #F3F4F6 !important;

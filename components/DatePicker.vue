@@ -3,13 +3,14 @@
     <div class="relative w-[210px]">
       <input
         @mouseover="typeDateAndRemoveIcon1"
+        @change="($event) => currentDate = $event.target.value"
         id="date"
         required=""
         :type="text1"
         class="h-[42px] formDate placeholder:font-[600] placeholder:text-sm placeholder:text-slate-900"
         placeholder="Дата и время (Начало)"
+        :max="maxDate"
         :min="currentDate"
-        v-model="selectedDataFrom"
       />
       <a
         v-show="icon1"
@@ -21,12 +22,13 @@
     <div class="relative w-[210px]">
       <input
         @mouseover="typeDateAndRemoveIcon2"
+        @change="($event) => maxDate = $event.target.value"
         id="date2"
         required=""
         :type="text2"
         class="h-[42px] formDate placeholder:font-[600] placeholder:text-sm placeholder:text-slate-900"
         placeholder="Дата и время (Конец)"
-        :min="selectedDataFrom"
+        :min="currentDate"
       />
       <a
         v-show="icon2"
@@ -49,14 +51,12 @@ export default {
       icon2: true,
       text1: "text",
       text2: "text",
-      selectedDataFrom: ''
+      selectedDataFrom: '',
+      currentDate: moment().format("YYYY-MM-DDTHH:mm"),
+      maxDate: ''
     };
   },
   computed: {
-    currentDate() {
-      let currentDate = moment().format("YYYY-MM-DDTHH:mm");
-      return currentDate;
-    },
   },
   methods: {
     typeDateAndRemoveIcon1() {
