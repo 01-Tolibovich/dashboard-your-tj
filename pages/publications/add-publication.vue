@@ -144,7 +144,25 @@
               v-show="previewPost"
               class="max-w-[600px] rounded-lg border mt-2"
             >
-              <img class="rounded-t-lg mb-4" :src="imageData" alt="" />
+              <div class="relative">
+                <img class="rounded-t-lg mb-4 w-full" :src="imageData" alt="" />
+                <div
+                  v-if="imageData"
+                  class="absolute bottom-0 flex w-full justify-between p-4"
+                >
+                  <label
+                    class="text-[#0048B7] text-[10px] bg-white px-3 py-2 rounded-md font-[500] cursor-pointer"
+                    for="fileInput2"
+                    >Изменить</label
+                  >
+                  <label
+                    @click="imageData = ''"
+                    class="text-[#0048B7] text-[10px] bg-white px-3 py-2 rounded-md font-[500] cursor-pointer"
+                    >Удалить</label
+                  >
+                </div>
+              </div>
+
               <div class="mb-8 mx-6 min-h-[180px]">
                 <span class="text-[#65676B] up text-[12px] mb-2">YOUR.TJ</span>
                 <h2>{{ titleValue }}</h2>

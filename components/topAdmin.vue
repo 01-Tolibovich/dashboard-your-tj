@@ -40,7 +40,7 @@
         alt=""
       />
     </div>
-    <div ><a href="#" >Профиль</a><a href="#">Выход</a></div>
+    <!-- <div ><a href="#" >Профиль</a><a href="#">Выход</a></div> -->
   </div>
 </template>
 

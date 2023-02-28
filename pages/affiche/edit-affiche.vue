@@ -6,8 +6,7 @@
     <MainBg>
       <AddPostsFormSlot>
         <div class="flex flex-wrap gap-5">
-          <DatePicker datePicker="Дата и время (Начало)" />
-          <DatePicker datePicker="Дата и время (Конец)" />
+          <DatePicker />
           <div class="h-[42px] flex flex-wrap gap-5 items-center" id="price">
             <div
               class="bg-white shadow-sm rounded-md flex items-center p-2 border"

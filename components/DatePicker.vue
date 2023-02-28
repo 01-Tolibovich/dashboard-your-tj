@@ -1,38 +1,71 @@
 <template>
-  <div class="relative w-[210px]">
-    <input
-      @mouseover="typeDateAndRemoveIcon"
-      id="date"
-      required=""
-      :type="text"
-      class="h-[42px] formDate placeholder:font-[600] placeholder:text-sm placeholder:text-slate-900"
-      :placeholder="datePicker"
-    />
-    <a
-      v-show="icon"
-      href="#date"
-      class="absolute top-[44%] right-[19px] translate-y-[-50%]"
-      ><img src="../assets/images/date.svg" alt=""
-    /></a>
+  <div class="flex gap-5 flex-wrap">
+    <div class="relative w-[210px]">
+      <input
+        @mouseover="typeDateAndRemoveIcon1"
+        id="date"
+        required=""
+        :type="text1"
+        class="h-[42px] formDate placeholder:font-[600] placeholder:text-sm placeholder:text-slate-900"
+        placeholder="Дата и время (Начало)"
+        :min="currentDate"
+        v-model="selectedDataFrom"
+      />
+      <a
+        v-show="icon1"
+        href="#date"
+        class="absolute top-[44%] right-[19px] translate-y-[-50%]"
+        ><img src="../assets/images/date.svg" alt=""
+      /></a>
+    </div>
+    <div class="relative w-[210px]">
+      <input
+        @mouseover="typeDateAndRemoveIcon2"
+        id="date2"
+        required=""
+        :type="text2"
+        class="h-[42px] formDate placeholder:font-[600] placeholder:text-sm placeholder:text-slate-900"
+        placeholder="Дата и время (Конец)"
+        :min="selectedDataFrom"
+      />
+      <a
+        v-show="icon2"
+        href="#date"
+        class="absolute top-[44%] right-[19px] translate-y-[-50%]"
+        ><img src="../assets/images/date.svg" alt=""
+      /></a>
+    </div>
   </div>
 </template>
 
 <script>
+import moment from "moment";
 export default {
   name: "date-packer",
-  props: {
-    datePicker: String,
-  },
+  components: { moment },
   data() {
     return {
-      icon: true,
-      type: "text",
+      icon1: true,
+      icon2: true,
+      text1: "text",
+      text2: "text",
+      selectedDataFrom: ''
     };
   },
+  computed: {
+    currentDate() {
+      let currentDate = moment().format("YYYY-MM-DDTHH:mm");
+      return currentDate;
+    },
+  },
   methods: {
-    typeDateAndRemoveIcon() {
-      this.icon = false;
-      this.text = "datetime-local";
+    typeDateAndRemoveIcon1() {
+      this.icon1 = false;
+      this.text1 = "datetime-local";
+    },
+    typeDateAndRemoveIcon2() {
+      this.icon2 = false;
+      this.text2 = "datetime-local";
     },
   },
 };
@@ -42,7 +75,7 @@ export default {
 input {
   margin: 0 !important;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);
   opacity: 1;
   display: block;
