@@ -49,10 +49,10 @@
         class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB]"
         href="#"
         >Профиль</a
-      ><a
+      ><p
+        @click="logout"
         class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB]"
-        href="#"
-        >Выход</a
+        >Выход</p
       >
     </div>
   </div>
@@ -66,6 +66,17 @@ export default {
       toggleMenu: false,
       toggleProfile: false,
     };
+  },
+  computed: {
+    isAuth() {
+      return this.$store.getters.isAuth;
+    },
+  },
+  methods: {
+    logout() {
+      // localStorage.removeItem('token')
+      this.$router.push('/autorization')
+    },
   },
 };
 </script>
