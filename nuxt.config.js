@@ -1,5 +1,4 @@
-let baseUrl = 'http://api.eskh.colibri.tj/api/'
-
+let baseUrl = 'http://api.your.colibri.tj/api/'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -20,7 +19,8 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/axios.js'],
+  plugins: ['~/plugins/axios.js', ],
+  baseURL: `${baseUrl}`,
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -33,8 +33,21 @@ export default {
     },
   },
 
+  store: {
+    modules: {
+      auth: '@/store/auth.js'
+    }
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    '@/store/auth.js'
+  ],
+
+  axios: {
+    // configure axios options here
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

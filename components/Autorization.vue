@@ -1,6 +1,6 @@
 <template>
   <form
-    @submit.prevent="onSubmit"
+    @submit.prevent="login"
     class="flex min-h-[90vh] flex-col justify-center py-12 sm:px-6 lg:px-8 px-4"
   >
     <div class="sm:mx-auto sm:w-full sm:max-w-md shadow-md">
@@ -13,13 +13,13 @@
       </div>
       <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10">
         <h2 class="text-center mt-4 mb-8 text-2xl">Войдите в аккаунт</h2>
-        <form class="space-y-6" action="#" method="POST">
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700"
               >Email address</label
             >
             <div class="mt-1">
               <input
+              v-model="form.email"
                 id="email"
                 name="email"
                 type="email"
@@ -38,6 +38,7 @@
             >
             <div class="mt-1">
               <input
+                v-model="form.password"
                 id="password"
                 name="password"
                 type="password"
@@ -51,7 +52,6 @@
           <div>
             <button type="submit" class="_blue-button">Войти</button>
           </div>
-        </form>
       </div>
     </div>
   </form>
@@ -59,13 +59,41 @@
 
 <script>
 import AddButton from "./buttons/AddButton.vue";
+import axios from 'axios'
 export default {
   name: "autorization",
   components: { AddButton },
+  data() {
+    return {
+      form: {
+        email: '',
+        password: ''
+      }
+    }
+  },
   methods: {
-    onSubmit() {
-      this.$store.dispatch("login");
-    },
+    // onSubmit() {
+    //   this.$store.dispatch("login");
+    // },
+    async login() {
+      try {
+          let res = await axios.post('http://api.your.colibri.tj/api/auth/login', this.form)
+          localStorage.setItem('token', res.data.data.token)
+          this.$router.push("/");
+        } catch(err) {
+          console.log(err);
+        }
+    }
+        // login(){
+        //   try {
+        //     this.$auth.loginWith("local", {data: this.form})
+        //     this.$router.push("/");
+        //   } catch(err) {
+        //     console.log(err);
+        //   }
+            // this.$auth.loginWith("local", {data: this.form}).then(() =>{
+            //   this.$router.push("/");
+            // });
   },
 };
 </script>

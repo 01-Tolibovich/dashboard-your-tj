@@ -65,18 +65,77 @@ export default {
     return {
       toggleMenu: false,
       toggleProfile: false,
+      crumbs: [{ name: 'Пользователи' }],
+      activeAction: 0,
+      users: [],
+      pageNumber: 0,
+      removeId: 0,
+      nextLink: '',
+      activeUser: null
     };
   },
-  computed: {
-    isAuth() {
-      return this.$store.getters.isAuth;
+  methods: {
+    async getUsers() {
+      try {
+        this.pageNumber += 1
+        let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
+        this.$axios.setHeader('Authorization', token)
+        let res = await this.$axios(`dashboard/users?page=${this.pageNumber}`)
+        this.users = [...this.users, ...res.data.data]
+        this.nextLink = res.data.links.next
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    removeItemModal(id) {
+      this.removeId = id
+      this.$modal.show('example')
+    },
+    clickUser(user) {
+      this.activeUser = user
+      this.$modal.show('user')
+    },
+    async changeUser() {
+      try {
+        let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
+        this.$axios.setHeader('Authorization', token)
+        if(this.activeUser.is_active === 0) {
+          this.activeUser.is_active = 1
+        }
+        else this.activeUser.is_active = 0
+        await this.$axios.put(`dashboard/users/${this.activeUser.id}`, this.activeUser)
+        await this.$router.push('/users')
+        this.$modal.hide('user')
+      } catch(err) {
+        if(err) {
+          console.log(err)
+          this.$toast
+            .error('Ошибка во время изменения пользователя')
+            .goAway(2000)
+        }
+      }
+    },
+    async remove() {
+      let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
+      this.$axios.setHeader('Authorization', token)
+      await this.$axios.delete(`dashboard/users/${this.removeId}`)
+      this.$toast
+        .success(
+          `Пользователь ${
+            this.users.find((user) => user.id === this.removeId).fullname
+          } был удалён`
+        )
+        .goAway(1500)
+      this.$modal.hide('example')
+      this.users = this.users.filter((user) => user.id !== this.removeId)
+    },
+    changeActiveAction(id) {
+      if (id === this.activeAction) return (this.activeAction = 0)
+      this.activeAction = id
     },
   },
-  methods: {
-    logout() {
-      // localStorage.removeItem('token')
-      this.$router.push('/autorization')
-    },
+  mounted() {
+    this.getUsers()
   },
 };
 </script>
