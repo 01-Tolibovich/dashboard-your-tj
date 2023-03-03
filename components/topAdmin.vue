@@ -50,8 +50,8 @@
         href="#"
         >Профиль</a
       ><p
-        @click="logout"
-        class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB]"
+        @click="onLogout"
+        class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB] cursor-pointer"
         >Выход</p
       >
     </div>
@@ -77,6 +77,7 @@ export default {
   methods: {
     async getUsers() {
       try {
+        console.log(this.$auth.user);
         this.pageNumber += 1
         let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
         this.$axios.setHeader('Authorization', token)
@@ -86,6 +87,9 @@ export default {
       } catch (err) {
         console.log(err)
       }
+    },
+    async onLogout() {
+      await this.$auth.logout().then(() =>  this.$router.push("/login"));
     },
     removeItemModal(id) {
       this.removeId = id

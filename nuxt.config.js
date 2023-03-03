@@ -1,4 +1,5 @@
 let baseUrl = 'http://api.your.colibri.tj/api/'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -33,21 +34,61 @@ export default {
     },
   },
 
-  store: {
-    modules: {
-      auth: '@/store/auth.js'
-    }
-  },
-
+  
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@/store/auth.js'
+    '@nuxtjs/auth-next',
   ],
 
   axios: {
-    // configure axios options here
+    // credentials: true,
+    baseUrl: baseUrl,
+    headers: {
+      "Content-Type": "application/json",
+    },
   },
+
+  auth: {
+    watchLoggedIn: true,
+    resetOnError: true,
+    strategies: {
+      local: {
+        url: baseUrl,
+        token: {
+          property: "data.token",
+          maxAge: false,
+          global: true,
+        },
+        user: {
+          property: "user",
+          autoFetch: true
+        },
+        endpoints: {
+          login: {
+            url: `${baseUrl}auth/login`,
+          },
+          logout: {
+            url: `${baseUrl}auth/logout`,
+          },
+          user: {
+            url: `${baseUrl}user`,
+          },
+        },
+        autoFetchUser: true
+      },
+    },
+    redirect: {
+      login: "/login",
+      logout: "/login",
+      home: "/",
+    },
+  },
+  router: {
+    middleware: ["auth"],
+  },
+
+  
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

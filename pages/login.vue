@@ -1,7 +1,7 @@
 <template>
   <div class="autorization">
     <form
-      @submit.prevent="login"
+      @submit.prevent="onLogin"
       class="flex min-h-[90vh] flex-col justify-center py-12 sm:px-6 lg:px-8 px-4"
     >
       <div class="sm:mx-auto sm:w-full sm:max-w-md shadow-md">
@@ -62,6 +62,7 @@
 <script>
 export default {
   name: "login",
+  middleware: "auth",
   data() {
     return {
       email: "",
@@ -69,20 +70,15 @@ export default {
     };
   },
   methods: {
-    async submitForm() {
-      const success = await this.$store.dispatch("login", {
-        email: this.email,
-        password: this.password,
-      });
-
-      if (success) {
-        // redirect to the dashboard page on successful login
-        this.$router.push("/");
-      } else {
-        // show an error message on failed login
-        alert("Invalid email or password");
-      }
+    onLogin() {
+      this.$auth.loginWith('local', {
+        data: {
+          email: this.email,
+          password: this.password
+        }
+      }).then(() =>  this.$router.push("/"))
     },
+    
   },
   layout: "empty",
 };
