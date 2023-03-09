@@ -28,16 +28,16 @@
         src="../assets/images/bell.svg"
         alt=""
       />
-      <h2 class="row-start-1 row-end-2 text-[14px] font-bold">
-        Абуамриддин Гафуров
+      <h2 @click="toggleProfile = !toggleProfile" class="row-start-1 row-end-2 text-[14px] font-bold cursor-pointer">
+        {{ user.first_name + ' ' + user.last_name }}
       </h2>
-      <p class="row-start-2 row-end-3 text-[12px] text-[#575F6C]">
+      <p @click="toggleProfile = !toggleProfile" class=" cursor-pointer row-start-2 row-end-3 text-[12px] text-[#575F6C]">
         Администратор
       </p>
       <img
         @click="toggleProfile = !toggleProfile"
-        class="row-start-1 row-end-3 rounded-full hidden sm:block"
-        src="../assets/images/Avatar profile.jpg"
+        class="row-start-1 row-end-3 rounded-full hidden sm:block w-12 h-12 border cursor-pointer"
+        :src="user.avatar"
         alt=""
       />
     </div>
@@ -49,11 +49,13 @@
         class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB]"
         href="#"
         >Профиль</a
-      ><p
+      >
+      <p
         @click="onLogout"
         class="text-black px-4 py-3 bg-white rounded-md border border-[#E5E7EB] cursor-pointer"
-        >Выход</p
       >
+        Выход
+      </p>
     </div>
   </div>
 </template>
@@ -65,81 +67,53 @@ export default {
     return {
       toggleMenu: false,
       toggleProfile: false,
-      crumbs: [{ name: 'Пользователи' }],
+      crumbs: [{ name: "Пользователи" }],
       activeAction: 0,
       users: [],
       pageNumber: 0,
       removeId: 0,
-      nextLink: '',
-      activeUser: null
+      nextLink: "",
+      activeUser: null,
     };
   },
+  computed: {
+    user() {
+      return this.$store.state.auth.user
+      
+    }
+  },
+
+  // Это сценарий, написанный на JavaScript и Vue.js, популярном front-end фреймворке. Он определяет компонент Vue.js с несколькими методами и смонтированным крючком жизненного цикла. Здесь представлено подробное объяснение сценария:
+  // Этот объект содержит несколько методов, которые будут доступны для использования в компоненте Vue.js.
   methods: {
-    async getUsers() {
-      try {
-        console.log(this.$auth.user);
-        this.pageNumber += 1
-        let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
-        this.$axios.setHeader('Authorization', token)
-        let res = await this.$axios(`dashboard/users?page=${this.pageNumber}`)
-        this.users = [...this.users, ...res.data.data]
-        this.nextLink = res.data.links.next
-      } catch (err) {
-        console.log(err)
-      }
-    },
+    // Это асинхронный метод getUsers. Он используется для получения списка пользователей с сервера.
+
+    // Это асинхронный метод, называемый onLogout. Он используется для выхода пользователя из приложения путем вызова метода $auth.logout(), предоставляемого плагином $auth. После выхода пользователя из приложения вызывается метод $router.push() для перенаправления его на страницу входа в систему.
     async onLogout() {
-      await this.$auth.logout().then(() =>  this.$router.push("/login"));
+      await this.$auth.logout().then(() => this.$router.push("/login"));
     },
+
+    // Этот метод называется removeItemModal и принимает параметр id. Он устанавливает свойство removeId компонента на параметр id, а затем показывает модальное диалоговое окно с идентификатором "example" с помощью метода $modal.show().
     removeItemModal(id) {
-      this.removeId = id
-      this.$modal.show('example')
+      this.removeId = id;
+      this.$modal.show("example");
     },
+
+    // Этот метод называется clickUser и принимает параметр пользователя. Он устанавливает свойство activeUser компонента на параметр пользователя, а затем показывает модальное диалоговое окно с идентификатором "user" с помощью метода $modal.show().
     clickUser(user) {
-      this.activeUser = user
-      this.$modal.show('user')
+      this.activeUser = user;
+      this.$modal.show("user");
     },
-    async changeUser() {
-      try {
-        let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
-        this.$axios.setHeader('Authorization', token)
-        if(this.activeUser.is_active === 0) {
-          this.activeUser.is_active = 1
-        }
-        else this.activeUser.is_active = 0
-        await this.$axios.put(`dashboard/users/${this.activeUser.id}`, this.activeUser)
-        await this.$router.push('/users')
-        this.$modal.hide('user')
-      } catch(err) {
-        if(err) {
-          console.log(err)
-          this.$toast
-            .error('Ошибка во время изменения пользователя')
-            .goAway(2000)
-        }
-      }
-    },
-    async remove() {
-      let token = 'Bearer ' + this.$auth.$storage.getUniversal('token')
-      this.$axios.setHeader('Authorization', token)
-      await this.$axios.delete(`dashboard/users/${this.removeId}`)
-      this.$toast
-        .success(
-          `Пользователь ${
-            this.users.find((user) => user.id === this.removeId).fullname
-          } был удалён`
-        )
-        .goAway(1500)
-      this.$modal.hide('example')
-      this.users = this.users.filter((user) => user.id !== this.removeId)
-    },
+
+    // Это асинхронный метод под названием changeUser. Он пытается обновить свойство is_active пользователя, делая HTTP PUT запрос на сервер с помощью $axios. Если запрос успешен, пользователь перенаправляется на страницу /users с помощью $router.push(), а "user"
+    
     changeActiveAction(id) {
-      if (id === this.activeAction) return (this.activeAction = 0)
-      this.activeAction = id
+      if (id === this.activeAction) return (this.activeAction = 0);
+      this.activeAction = id;
     },
   },
   mounted() {
-    this.getUsers()
+    console.log(this.$store.state.auth.user);
   },
 };
 </script>
