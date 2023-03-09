@@ -4,7 +4,7 @@
       @submit.prevent="onLogin"
       class="flex min-h-[90vh] flex-col justify-center py-12 sm:px-6 lg:px-8 px-4"
     >
-      <div :class="{ shake: loginError }" class="sm:mx-auto sm:w-full sm:max-w-md shadow-md">
+      <div :class="{ shake: formShake }" class="sm:mx-auto sm:w-full sm:max-w-md shadow-md">
         <div
           class="mx-auto w-full bg-white pt-8 rounded-t-lg sm:mx-auto sm:w-full sm:max-w-md"
         >
@@ -71,7 +71,8 @@ export default {
     return {
       email: "",
       password: "",
-      loginError: false
+      loginError: false,
+      formShake: false
     };
   },
   methods: {
@@ -89,6 +90,10 @@ export default {
         console.log(response);
       } catch (err) {
         this.loginError = true
+        this.formShake = true
+        setTimeout(() => {
+          this.formShake = false
+        },2000)
 
       }
     },
