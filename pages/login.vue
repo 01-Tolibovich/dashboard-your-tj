@@ -16,7 +16,7 @@
           <h2 class="text-center mt-4 mb-8 text-2xl">Войдите в аккаунт</h2>
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700"
-              >Email address</label
+              >Введите email</label
             >
             <div class="mt-1">
               <input
@@ -36,7 +36,7 @@
             <label
               for="password"
               class="block text-sm font-medium text-gray-700 mt-6"
-              >Password</label
+              >Введите пароль</label
             >
             <div class="mt-1">
               <input

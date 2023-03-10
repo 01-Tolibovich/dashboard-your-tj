@@ -1,8 +1,10 @@
 <template>
-  <div class=" sidebar-menu p-7 relative">
-    <div class="fixed">
+  <div class="flex flex-col items-end sidebar-menu bg-white xl:bg-none h-full xl:h-auto p-7 absolute z-20 top-0 left-0 xl:relative border-r border-[#E5E7EB] overflow-y-auto">
+    <div @click="menuClose" class="xl:hidden"><img  src="../assets/images/close-menu-btn.svg" alt=""></div>
+    
+    <div @click="menuClose" class="xl:fixed">
       <header class="mb-[40px] mt-4 mx-auto">
-        <img class="mx-auto" src="../assets/images/your.png" alt="your" />
+        <nuxt-link exact to="/"><img class="mx-auto" src="../assets/images/your.png" alt="your" /></nuxt-link>
       </header>
       <aside>
         <nav class="grid">
@@ -65,10 +67,16 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: "sadebar-menu",
   data() {
     return {};
   },
+  methods: {
+    ...mapMutations({
+      menuClose: 'menuClose'
+    })
+  }
 };
 </script>

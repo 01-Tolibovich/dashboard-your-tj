@@ -5,7 +5,7 @@
     </HeadGrid>
     
     <div
-      class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-11 mb-7"
+      class="grid sm:grid-cols-[repeat(auto-fit,_minmax(370px,_1fr))] gap-x-11 mb-7"
     >
       <MainComponent
         v-for="item in mainComponents"
@@ -21,6 +21,7 @@
         :publication_history="posts"
       />
     </div>
+    <div></div>
   </div>
 </template>
 

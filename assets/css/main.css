@@ -239,6 +239,9 @@
   .open_profile {
     @apply translate-y-[72px]
   }
+  .hidden-profile-buttons {
+    @apply translate-y-[-30px]
+  }
 }
 .tox-edit-area__iframe, .tox-statusbar {
   background: #F3F4F6 !important;
